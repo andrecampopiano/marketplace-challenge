@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "coreswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/andrecampopiano/CoreSwift",
+      "state" : {
+        "revision" : "60e03895a7373c299a603226b966c510bed3a9c8",
+        "version" : "1.0.5"
+      }
+    },
+    {
+      "identity" : "ios-snapshot-test-case",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/uber/ios-snapshot-test-case",
+      "state" : {
+        "revision" : "7b10770333a961be6e5a41c9ce04b8c6d3990126",
+        "version" : "8.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
