@@ -10,6 +10,7 @@
 		9401F44C2A2F781800C32AA7 /* FontStyleAndName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F44B2A2F781800C32AA7 /* FontStyleAndName.swift */; };
 		9401F44F2A2F78A500C32AA7 /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F44E2A2F78A500C32AA7 /* FontSize.swift */; };
 		9401F4522A2F795F00C32AA7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F4512A2F795F00C32AA7 /* UIFont.swift */; };
+		9401F4572A2F7AB400C32AA7 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F4562A2F7AB400C32AA7 /* Size.swift */; };
 		94A472F72A2E8E4A00686B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472F62A2E8E4A00686B4C /* AppDelegate.swift */; };
 		94A472FB2A2E8E4A00686B4C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472FA2A2E8E4A00686B4C /* HomeController.swift */; };
 		94A473002A2E8E4C00686B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A472FF2A2E8E4C00686B4C /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		9401F44B2A2F781800C32AA7 /* FontStyleAndName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleAndName.swift; sourceTree = "<group>"; };
 		9401F44E2A2F78A500C32AA7 /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
 		9401F4512A2F795F00C32AA7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		9401F4562A2F7AB400C32AA7 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		94A472F32A2E8E4A00686B4C /* MarketplaceChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A472F62A2E8E4A00686B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94A472FA2A2E8E4A00686B4C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		9401F4472A2F76E300C32AA7 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				9401F4542A2F7A9E00C32AA7 /* CGFloat */,
 				9401F4482A2F772E00C32AA7 /* UIFont */,
 			);
 			path = DesignSystem;
@@ -133,6 +136,22 @@
 				9401F4512A2F795F00C32AA7 /* UIFont.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9401F4542A2F7A9E00C32AA7 /* CGFloat */ = {
+			isa = PBXGroup;
+			children = (
+				9401F4552A2F7AA300C32AA7 /* Enum */,
+			);
+			path = CGFloat;
+			sourceTree = "<group>";
+		};
+		9401F4552A2F7AA300C32AA7 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				9401F4562A2F7AB400C32AA7 /* Size.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		94A472EA2A2E8E4A00686B4C = {
@@ -438,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9401F4522A2F795F00C32AA7 /* UIFont.swift in Sources */,
+				9401F4572A2F7AB400C32AA7 /* Size.swift in Sources */,
 				94A4730E2A2E8E4C00686B4C /* HomeControllerTests.swift in Sources */,
 				9401F44F2A2F78A500C32AA7 /* FontSize.swift in Sources */,
 				9401F44C2A2F781800C32AA7 /* FontStyleAndName.swift in Sources */,
