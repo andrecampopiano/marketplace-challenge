@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9401F44C2A2F781800C32AA7 /* FontStyleAndName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F44B2A2F781800C32AA7 /* FontStyleAndName.swift */; };
 		94A472F72A2E8E4A00686B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472F62A2E8E4A00686B4C /* AppDelegate.swift */; };
 		94A472FB2A2E8E4A00686B4C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472FA2A2E8E4A00686B4C /* HomeController.swift */; };
 		94A473002A2E8E4C00686B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A472FF2A2E8E4C00686B4C /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9401F44B2A2F781800C32AA7 /* FontStyleAndName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleAndName.swift; sourceTree = "<group>"; };
 		94A472F32A2E8E4A00686B4C /* MarketplaceChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A472F62A2E8E4A00686B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94A472FA2A2E8E4A00686B4C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9401F4462A2F76D700C32AA7 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				9401F4472A2F76E300C32AA7 /* DesignSystem */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		9401F4472A2F76E300C32AA7 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				9401F4482A2F772E00C32AA7 /* UIFont */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		9401F4482A2F772E00C32AA7 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				9401F44A2A2F774600C32AA7 /* Enum */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
+		9401F44A2A2F774600C32AA7 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				9401F44B2A2F781800C32AA7 /* FontStyleAndName.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		94A472EA2A2E8E4A00686B4C = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +221,7 @@
 		94A473372A2E9AB200686B4C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9401F4462A2F76D700C32AA7 /* Infrastructure */,
 				94A473382A2E9AB800686B4C /* Features */,
 			);
 			path = Sources;
@@ -389,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94A4730E2A2E8E4C00686B4C /* HomeControllerTests.swift in Sources */,
+				9401F44C2A2F781800C32AA7 /* FontStyleAndName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
