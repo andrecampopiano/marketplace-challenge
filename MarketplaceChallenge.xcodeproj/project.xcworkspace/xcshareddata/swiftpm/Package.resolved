@@ -10,12 +10,12 @@
       }
     },
     {
-      "identity" : "ios-snapshot-test-case",
+      "identity" : "swiftlintplugin",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/uber/ios-snapshot-test-case",
+      "location" : "https://github.com/lukepistrol/SwiftLintPlugin.git",
       "state" : {
-        "revision" : "7b10770333a961be6e5a41c9ce04b8c6d3990126",
-        "version" : "8.0.0"
+        "revision" : "d3ec7fb242ebe1d8e23bf17e58a1e27d43125994",
+        "version" : "0.2.6"
       }
     }
   ],

@@ -28,4 +28,3 @@ class HomeController: UIViewController {
         view.backgroundColor = .gray
     }
 }
-

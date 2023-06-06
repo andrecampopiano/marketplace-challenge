@@ -255,6 +255,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9401F4432A2F702000C32AA7 /* PBXTargetDependency */,
 			);
 			name = MarketplaceChallenge;
 			packageProductDependencies = (
@@ -333,8 +334,8 @@
 			);
 			mainGroup = 94A472EA2A2E8E4A00686B4C;
 			packageReferences = (
-				94A473292A2E8F5C00686B4C /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */,
 				94A4732C2A2E8FC900686B4C /* XCRemoteSwiftPackageReference "CoreSwift" */,
+				9401F4412A2F6FE900C32AA7 /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */,
 			);
 			productRefGroup = 94A472F42A2E8E4A00686B4C /* Products */;
 			projectDirPath = "";
@@ -403,6 +404,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9401F4432A2F702000C32AA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 9401F4422A2F702000C32AA7 /* SwiftLint */;
+		};
 		94A4730B2A2E8E4C00686B4C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 94A472F22A2E8E4A00686B4C /* MarketplaceChallenge */;
@@ -477,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -531,7 +536,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -721,12 +726,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		94A473292A2E8F5C00686B4C /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */ = {
+		9401F4412A2F6FE900C32AA7 /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/uber/ios-snapshot-test-case";
+			repositoryURL = "https://github.com/lukepistrol/SwiftLintPlugin.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
+				minimumVersion = 0.2.6;
 			};
 		};
 		94A4732C2A2E8FC900686B4C /* XCRemoteSwiftPackageReference "CoreSwift" */ = {
@@ -740,6 +745,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9401F4422A2F702000C32AA7 /* SwiftLint */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9401F4412A2F6FE900C32AA7 /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */;
+			productName = "plugin:SwiftLint";
+		};
 		94A4732D2A2E8FC900686B4C /* CoreSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 94A4732C2A2E8FC900686B4C /* XCRemoteSwiftPackageReference "CoreSwift" */;
