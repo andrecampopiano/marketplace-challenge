@@ -21,6 +21,7 @@
 		9401F4762A2F804800C32AA7 /* AccessibilityLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9401F4752A2F804800C32AA7 /* AccessibilityLocalizable.strings */; };
 		9401F4792A2F845B00C32AA7 /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F4782A2F845B00C32AA7 /* ApplicationConstants.swift */; };
 		9401F47F2A2F858700C32AA7 /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F47E2A2F858700C32AA7 /* ProductResponse.swift */; };
+		9401F4832A2F8CE700C32AA7 /* HomeBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F4822A2F8CE700C32AA7 /* HomeBusiness.swift */; };
 		94A472F72A2E8E4A00686B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472F62A2E8E4A00686B4C /* AppDelegate.swift */; };
 		94A472FB2A2E8E4A00686B4C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472FA2A2E8E4A00686B4C /* HomeController.swift */; };
 		94A473002A2E8E4C00686B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A472FF2A2E8E4C00686B4C /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		9401F4752A2F804800C32AA7 /* AccessibilityLocalizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = AccessibilityLocalizable.strings; sourceTree = "<group>"; };
 		9401F4782A2F845B00C32AA7 /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
 		9401F47E2A2F858700C32AA7 /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
+		9401F4822A2F8CE700C32AA7 /* HomeBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBusiness.swift; sourceTree = "<group>"; };
 		94A472F32A2E8E4A00686B4C /* MarketplaceChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A472F62A2E8E4A00686B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94A472FA2A2E8E4A00686B4C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,22 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		9401F4802A2F8CC700C32AA7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9401F4812A2F8CD200C32AA7 /* Business */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9401F4812A2F8CD200C32AA7 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				9401F4822A2F8CE700C32AA7 /* HomeBusiness.swift */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
 		94A472EA2A2E8E4A00686B4C = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				9401F47B2A2F856D00C32AA7 /* Data */,
+				9401F4802A2F8CC700C32AA7 /* Domain */,
 				94A4733C2A2E9AFC00686B4C /* Presentation */,
 			);
 			path = Home;
@@ -562,6 +581,7 @@
 			files = (
 				94A472FB2A2E8E4A00686B4C /* HomeController.swift in Sources */,
 				9401F46D2A2F7F6D00C32AA7 /* LocalizableBundle.swift in Sources */,
+				9401F4832A2F8CE700C32AA7 /* HomeBusiness.swift in Sources */,
 				9401F4792A2F845B00C32AA7 /* ApplicationConstants.swift in Sources */,
 				9401F4692A2F7ECE00C32AA7 /* UIColor.swift in Sources */,
 				9401F4662A2F7E0E00C32AA7 /* Colors.swift in Sources */,
