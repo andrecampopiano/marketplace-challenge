@@ -23,25 +23,21 @@
 		9401F47F2A2F858700C32AA7 /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F47E2A2F858700C32AA7 /* ProductResponse.swift */; };
 		9401F4832A2F8CE700C32AA7 /* HomeBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F4822A2F8CE700C32AA7 /* HomeBusiness.swift */; };
 		9401F4872A2F92C500C32AA7 /* ProductListGetOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F4862A2F92C500C32AA7 /* ProductListGetOperation.swift */; };
+		9401F4922A2FA90700C32AA7 /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F4912A2FA90600C32AA7 /* HomeManager.swift */; };
+		9401F4962A2FAA4C00C32AA7 /* HomeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F4952A2FAA4C00C32AA7 /* HomeManagerTests.swift */; };
+		9401F49B2A2FACBB00C32AA7 /* MarketplaceChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F49A2A2FACBB00C32AA7 /* MarketplaceChallengeTests.swift */; };
+		9401F49F2A2FADD700C32AA7 /* product_list_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 9401F49E2A2FADD700C32AA7 /* product_list_success.json */; };
+		9401F4A12A2FCAA100C32AA7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F4A02A2FCAA100C32AA7 /* main.swift */; };
 		94A472F72A2E8E4A00686B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472F62A2E8E4A00686B4C /* AppDelegate.swift */; };
 		94A472FB2A2E8E4A00686B4C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472FA2A2E8E4A00686B4C /* HomeController.swift */; };
 		94A473002A2E8E4C00686B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A472FF2A2E8E4C00686B4C /* Assets.xcassets */; };
 		94A473032A2E8E4C00686B4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94A473012A2E8E4C00686B4C /* LaunchScreen.storyboard */; };
 		94A4730E2A2E8E4C00686B4C /* HomeControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A4730D2A2E8E4C00686B4C /* HomeControllerTests.swift */; };
-		94A473182A2E8E4C00686B4C /* MarketplaceChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A473172A2E8E4C00686B4C /* MarketplaceChallengeUITests.swift */; };
-		94A4731A2A2E8E4C00686B4C /* MarketplaceChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A473192A2E8E4C00686B4C /* MarketplaceChallengeUITestsLaunchTests.swift */; };
 		94A4732E2A2E8FC900686B4C /* CoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 94A4732D2A2E8FC900686B4C /* CoreSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		94A4730A2A2E8E4C00686B4C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 94A472EB2A2E8E4A00686B4C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 94A472F22A2E8E4A00686B4C;
-			remoteInfo = MarketplaceChallenge;
-		};
-		94A473142A2E8E4C00686B4C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 94A472EB2A2E8E4A00686B4C /* Project object */;
 			proxyType = 1;
@@ -80,6 +76,11 @@
 		9401F47E2A2F858700C32AA7 /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
 		9401F4822A2F8CE700C32AA7 /* HomeBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBusiness.swift; sourceTree = "<group>"; };
 		9401F4862A2F92C500C32AA7 /* ProductListGetOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListGetOperation.swift; sourceTree = "<group>"; };
+		9401F4912A2FA90600C32AA7 /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
+		9401F4952A2FAA4C00C32AA7 /* HomeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManagerTests.swift; sourceTree = "<group>"; };
+		9401F49A2A2FACBB00C32AA7 /* MarketplaceChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceChallengeTests.swift; sourceTree = "<group>"; };
+		9401F49E2A2FADD700C32AA7 /* product_list_success.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = product_list_success.json; sourceTree = "<group>"; };
+		9401F4A02A2FCAA100C32AA7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		94A472F32A2E8E4A00686B4C /* MarketplaceChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A472F62A2E8E4A00686B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94A472FA2A2E8E4A00686B4C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -88,9 +89,6 @@
 		94A473042A2E8E4C00686B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94A473092A2E8E4C00686B4C /* MarketplaceChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketplaceChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A4730D2A2E8E4C00686B4C /* HomeControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerTests.swift; sourceTree = "<group>"; };
-		94A473132A2E8E4C00686B4C /* MarketplaceChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketplaceChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94A473172A2E8E4C00686B4C /* MarketplaceChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceChallengeUITests.swift; sourceTree = "<group>"; };
-		94A473192A2E8E4C00686B4C /* MarketplaceChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +101,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		94A473062A2E8E4C00686B4C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		94A473102A2E8E4C00686B4C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -244,6 +235,7 @@
 		9401F47B2A2F856D00C32AA7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9401F4902A2FA8FB00C32AA7 /* Manager */,
 				9401F4852A2F8EAB00C32AA7 /* Operation */,
 				9401F47C2A2F857100C32AA7 /* Model */,
 			);
@@ -290,12 +282,67 @@
 			path = Operation;
 			sourceTree = "<group>";
 		};
+		9401F4902A2FA8FB00C32AA7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9401F4912A2FA90600C32AA7 /* HomeManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		9401F4932A2FAA3500C32AA7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9401F4942A2FAA3B00C32AA7 /* Manager */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9401F4942A2FAA3B00C32AA7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9401F4952A2FAA4C00C32AA7 /* HomeManagerTests.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		9401F4982A2FAC7600C32AA7 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				9401F4992A2FAC9600C32AA7 /* Bundle */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		9401F4992A2FAC9600C32AA7 /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				9401F49A2A2FACBB00C32AA7 /* MarketplaceChallengeTests.swift */,
+			);
+			path = Bundle;
+			sourceTree = "<group>";
+		};
+		9401F49C2A2FAD4500C32AA7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9401F49D2A2FAD5300C32AA7 /* Json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9401F49D2A2FAD5300C32AA7 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				9401F49E2A2FADD700C32AA7 /* product_list_success.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
 		94A472EA2A2E8E4A00686B4C = {
 			isa = PBXGroup;
 			children = (
 				94A472F52A2E8E4A00686B4C /* MarketplaceChallenge */,
 				94A4730C2A2E8E4C00686B4C /* MarketplaceChallengeTests */,
-				94A473162A2E8E4C00686B4C /* MarketplaceChallengeUITests */,
 				94A472F42A2E8E4A00686B4C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -305,7 +352,6 @@
 			children = (
 				94A472F32A2E8E4A00686B4C /* MarketplaceChallenge.app */,
 				94A473092A2E8E4C00686B4C /* MarketplaceChallengeTests.xctest */,
-				94A473132A2E8E4C00686B4C /* MarketplaceChallengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -323,18 +369,10 @@
 		94A4730C2A2E8E4C00686B4C /* MarketplaceChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				9401F49C2A2FAD4500C32AA7 /* Resources */,
 				94A473372A2E9AB200686B4C /* Sources */,
 			);
 			path = MarketplaceChallengeTests;
-			sourceTree = "<group>";
-		};
-		94A473162A2E8E4C00686B4C /* MarketplaceChallengeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				94A473172A2E8E4C00686B4C /* MarketplaceChallengeUITests.swift */,
-				94A473192A2E8E4C00686B4C /* MarketplaceChallengeUITestsLaunchTests.swift */,
-			);
-			path = MarketplaceChallengeUITests;
 			sourceTree = "<group>";
 		};
 		94A4732F2A2E91D100686B4C /* Sources */ = {
@@ -352,6 +390,7 @@
 				94A473042A2E8E4C00686B4C /* Info.plist */,
 				94A473012A2E8E4C00686B4C /* LaunchScreen.storyboard */,
 				94A472F62A2E8E4A00686B4C /* AppDelegate.swift */,
+				9401F4A02A2FCAA100C32AA7 /* main.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -395,6 +434,7 @@
 		94A473372A2E9AB200686B4C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9401F4982A2FAC7600C32AA7 /* Infrastructure */,
 				94A473382A2E9AB800686B4C /* Features */,
 			);
 			path = Sources;
@@ -411,6 +451,7 @@
 		94A473392A2E9ABD00686B4C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9401F4932A2FAA3500C32AA7 /* Data */,
 				94A4733A2A2E9AC200686B4C /* Presentation */,
 			);
 			path = Home;
@@ -491,24 +532,6 @@
 			productReference = 94A473092A2E8E4C00686B4C /* MarketplaceChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		94A473122A2E8E4C00686B4C /* MarketplaceChallengeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 94A473232A2E8E4C00686B4C /* Build configuration list for PBXNativeTarget "MarketplaceChallengeUITests" */;
-			buildPhases = (
-				94A4730F2A2E8E4C00686B4C /* Sources */,
-				94A473102A2E8E4C00686B4C /* Frameworks */,
-				94A473112A2E8E4C00686B4C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				94A473152A2E8E4C00686B4C /* PBXTargetDependency */,
-			);
-			name = MarketplaceChallengeUITests;
-			productName = MarketplaceChallengeUITests;
-			productReference = 94A473132A2E8E4C00686B4C /* MarketplaceChallengeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -523,10 +546,6 @@
 						CreatedOnToolsVersion = 14.3;
 					};
 					94A473082A2E8E4C00686B4C = {
-						CreatedOnToolsVersion = 14.3;
-						TestTargetID = 94A472F22A2E8E4A00686B4C;
-					};
-					94A473122A2E8E4C00686B4C = {
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = 94A472F22A2E8E4A00686B4C;
 					};
@@ -551,7 +570,6 @@
 			targets = (
 				94A472F22A2E8E4A00686B4C /* MarketplaceChallenge */,
 				94A473082A2E8E4C00686B4C /* MarketplaceChallengeTests */,
-				94A473122A2E8E4C00686B4C /* MarketplaceChallengeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -573,13 +591,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		94A473112A2E8E4C00686B4C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				9401F49F2A2FADD700C32AA7 /* product_list_success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +608,8 @@
 				9401F4792A2F845B00C32AA7 /* ApplicationConstants.swift in Sources */,
 				9401F4692A2F7ECE00C32AA7 /* UIColor.swift in Sources */,
 				9401F4662A2F7E0E00C32AA7 /* Colors.swift in Sources */,
+				9401F4922A2FA90700C32AA7 /* HomeManager.swift in Sources */,
+				9401F4A12A2FCAA100C32AA7 /* main.swift in Sources */,
 				94A472F72A2E8E4A00686B4C /* AppDelegate.swift in Sources */,
 				9401F47F2A2F858700C32AA7 /* ProductResponse.swift in Sources */,
 				9401F4872A2F92C500C32AA7 /* ProductListGetOperation.swift in Sources */,
@@ -606,22 +620,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9401F4962A2FAA4C00C32AA7 /* HomeManagerTests.swift in Sources */,
 				9401F4522A2F795F00C32AA7 /* UIFont.swift in Sources */,
 				9401F4572A2F7AB400C32AA7 /* Size.swift in Sources */,
 				9401F45D2A2F7B3D00C32AA7 /* CGFloat.swift in Sources */,
 				94A4730E2A2E8E4C00686B4C /* HomeControllerTests.swift in Sources */,
 				9401F44F2A2F78A500C32AA7 /* FontSize.swift in Sources */,
 				9401F45A2A2F7AF000C32AA7 /* MarginSize.swift in Sources */,
+				9401F49B2A2FACBB00C32AA7 /* MarketplaceChallengeTests.swift in Sources */,
 				9401F44C2A2F781800C32AA7 /* FontStyleAndName.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		94A4730F2A2E8E4C00686B4C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				94A4731A2A2E8E4C00686B4C /* MarketplaceChallengeUITestsLaunchTests.swift in Sources */,
-				94A473182A2E8E4C00686B4C /* MarketplaceChallengeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,11 +643,6 @@
 			isa = PBXTargetDependency;
 			target = 94A472F22A2E8E4A00686B4C /* MarketplaceChallenge */;
 			targetProxy = 94A4730A2A2E8E4C00686B4C /* PBXContainerItemProxy */;
-		};
-		94A473152A2E8E4C00686B4C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 94A472F22A2E8E4A00686B4C /* MarketplaceChallenge */;
-			targetProxy = 94A473142A2E8E4C00686B4C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -769,24 +771,6 @@
 			};
 			name = Develop;
 		};
-		9401F48B2A2F97FA00C32AA7 /* Develop */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FLM2WYKE6E;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.andrecampopiano.MarketplaceChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MarketplaceChallenge;
-			};
-			name = Develop;
-		};
 		9401F48C2A2F981300C32AA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -891,24 +875,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarketplaceChallenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MarketplaceChallenge";
-			};
-			name = Release;
-		};
-		9401F48F2A2F981300C32AA7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FLM2WYKE6E;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.andrecampopiano.MarketplaceChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MarketplaceChallenge;
 			};
 			name = Release;
 		};
@@ -1132,42 +1098,6 @@
 			};
 			name = Homologation;
 		};
-		94A473242A2E8E4C00686B4C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FLM2WYKE6E;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.andrecampopiano.MarketplaceChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MarketplaceChallenge;
-			};
-			name = Debug;
-		};
-		94A473252A2E8E4C00686B4C /* Homologation */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FLM2WYKE6E;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.andrecampopiano.MarketplaceChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MarketplaceChallenge;
-			};
-			name = Homologation;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1200,17 +1130,6 @@
 				9401F48A2A2F97FA00C32AA7 /* Develop */,
 				94A473222A2E8E4C00686B4C /* Homologation */,
 				9401F48E2A2F981300C32AA7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Homologation;
-		};
-		94A473232A2E8E4C00686B4C /* Build configuration list for PBXNativeTarget "MarketplaceChallengeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				94A473242A2E8E4C00686B4C /* Debug */,
-				9401F48B2A2F97FA00C32AA7 /* Develop */,
-				94A473252A2E8E4C00686B4C /* Homologation */,
-				9401F48F2A2F981300C32AA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Homologation;

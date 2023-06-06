@@ -8,7 +8,7 @@
 import CoreSwift
 import Foundation
 
-typealias ProductListGetCompletion = (Result<ProductListResponse,Error>) -> Void
+typealias ProductListGetCompletion = (Result<ProductListResponse, Error>) -> Void
 
 protocol HomeBusinessProtocol {
     func handlerProductListGetCompletion(result: NetworkingResponse, completion: @escaping ProductListGetCompletion)

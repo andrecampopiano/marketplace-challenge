@@ -7,8 +7,6 @@
 
 import Foundation
 
-typealias ProductListResponse = [ProductResponse]
-
 class ProductSizeResponse: Decodable {
     var available: Bool?
     var size: String?
@@ -29,6 +27,7 @@ class ProductResponse: Decodable {
         case discountPercentage = "discount_percentage"
         case installments
         case image
+        case sizes
     }
     
     var name: String?
@@ -43,4 +42,8 @@ class ProductResponse: Decodable {
     var installments: String?
     var image: String?
     var sizes: [ProductSizeResponse]?
+}
+
+class ProductListResponse: Decodable {
+    var products: [ProductResponse]?
 }
