@@ -30,7 +30,7 @@ final class HomeController: UIViewController {
         setupLayout()
     }
 
-    // MARK: Private Methods
+    // MARK: - Private Methods
     
     private func setupLayout() {
         view.backgroundColor = .gray
