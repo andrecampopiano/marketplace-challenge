@@ -8,7 +8,13 @@
 import CoreSwift
 import UIKit
 
-class HomeController: UIViewController {
+final class HomeController: UIViewController {
+    
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let navigationTitle: String = LocalizableBundle.homeControllerNavigationTitle.localize
+    }
     
     // MARK: - Instantiate
     
@@ -17,6 +23,8 @@ class HomeController: UIViewController {
         return viewController
     }
     
+    // MARK: - Override Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
@@ -24,7 +32,8 @@ class HomeController: UIViewController {
 
     // MARK: Private Methods
     
-    func setupLayout() {
+    private func setupLayout() {
         view.backgroundColor = .gray
+        title = Constants.navigationTitle
     }
 }
