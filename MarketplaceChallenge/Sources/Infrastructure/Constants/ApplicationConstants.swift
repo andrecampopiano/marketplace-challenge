@@ -7,6 +7,4 @@
 
 import Foundation
 
-enum ApplicationConstants {
-    
-}
+enum ApplicationConstants { }
