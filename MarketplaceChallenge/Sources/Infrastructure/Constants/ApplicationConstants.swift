@@ -7,4 +7,8 @@
 
 import Foundation
 
-enum ApplicationConstants { }
+enum ApplicationConstants {
+    class PathApi {
+        let productList = "/v2/59b6a65a0f0000e90471257d"
+    }
+}
