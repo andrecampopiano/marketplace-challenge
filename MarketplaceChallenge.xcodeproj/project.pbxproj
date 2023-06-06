@@ -12,6 +12,7 @@
 		9401F4522A2F795F00C32AA7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F4512A2F795F00C32AA7 /* UIFont.swift */; };
 		9401F4572A2F7AB400C32AA7 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F4562A2F7AB400C32AA7 /* Size.swift */; };
 		9401F45A2A2F7AF000C32AA7 /* MarginSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F4592A2F7AF000C32AA7 /* MarginSize.swift */; };
+		9401F45D2A2F7B3D00C32AA7 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9401F45C2A2F7B3D00C32AA7 /* CGFloat.swift */; };
 		94A472F72A2E8E4A00686B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472F62A2E8E4A00686B4C /* AppDelegate.swift */; };
 		94A472FB2A2E8E4A00686B4C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472FA2A2E8E4A00686B4C /* HomeController.swift */; };
 		94A473002A2E8E4C00686B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A472FF2A2E8E4C00686B4C /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		9401F4512A2F795F00C32AA7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		9401F4562A2F7AB400C32AA7 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		9401F4592A2F7AF000C32AA7 /* MarginSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginSize.swift; sourceTree = "<group>"; };
+		9401F45C2A2F7B3D00C32AA7 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		94A472F32A2E8E4A00686B4C /* MarketplaceChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A472F62A2E8E4A00686B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94A472FA2A2E8E4A00686B4C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		9401F4542A2F7A9E00C32AA7 /* CGFloat */ = {
 			isa = PBXGroup;
 			children = (
+				9401F45B2A2F7B2100C32AA7 /* Extension */,
 				9401F4552A2F7AA300C32AA7 /* Enum */,
 			);
 			path = CGFloat;
@@ -155,6 +158,14 @@
 				9401F4592A2F7AF000C32AA7 /* MarginSize.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		9401F45B2A2F7B2100C32AA7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9401F45C2A2F7B3D00C32AA7 /* CGFloat.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		94A472EA2A2E8E4A00686B4C = {
@@ -461,6 +472,7 @@
 			files = (
 				9401F4522A2F795F00C32AA7 /* UIFont.swift in Sources */,
 				9401F4572A2F7AB400C32AA7 /* Size.swift in Sources */,
+				9401F45D2A2F7B3D00C32AA7 /* CGFloat.swift in Sources */,
 				94A4730E2A2E8E4C00686B4C /* HomeControllerTests.swift in Sources */,
 				9401F44F2A2F78A500C32AA7 /* FontSize.swift in Sources */,
 				9401F45A2A2F7AF000C32AA7 /* MarginSize.swift in Sources */,
