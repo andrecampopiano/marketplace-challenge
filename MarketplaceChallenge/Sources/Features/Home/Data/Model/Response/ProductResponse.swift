@@ -7,13 +7,17 @@
 
 import Foundation
 
-class ProductSizeResponse: Decodable {
+struct ProductListResponse: Decodable {
+    var products: [ProductResponse]?
+}
+
+struct ProductSizeResponse: Decodable {
     var available: Bool?
     var size: String?
     var sku: String?
 }
 
-class ProductResponse: Decodable {
+struct ProductResponse: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case name
@@ -42,8 +46,4 @@ class ProductResponse: Decodable {
     var installments: String?
     var image: String?
     var sizes: [ProductSizeResponse]?
-}
-
-class ProductListResponse: Decodable {
-    var products: [ProductResponse]?
 }

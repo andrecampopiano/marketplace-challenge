@@ -5,36 +5,27 @@
 //  Created by Andre Luis Campopiano on 05/06/23.
 //
 
+import CoreSwift
 import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    private var rootController: UINavigationController? {
+        return self.window?.rootViewController as? UINavigationController
+    }
+    
+    private lazy var applicationCoordinator: Coordinator = {
+        return ApplicationCoordinator(router: Router(rootController: self.rootController), coordinatorFactory: CoordinatorFactory())
+    }()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let navigationController = UINavigationController.instantiate()
         window = UIWindow(frame: UIScreen.main.bounds)
-        guard let viewController = buildHomeController() else { return false }
-        let navigationController = buildNavigationController(viewController: viewController)
-        self.window?.rootViewController = navigationController
-        self.window?.makeKeyAndVisible()
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        applicationCoordinator.start()
         return true
-    }
-    
-    private func buildHomeController() -> HomeController? {
-        return HomeController.instantiate()
-    }
-    
-    private func buildNavigationController(viewController: UIViewController) -> UINavigationController {
-        let navigationController = UINavigationController(rootViewController: viewController)
-        let standard = UINavigationBarAppearance()
-        standard.configureWithOpaqueBackground()
-        standard.backgroundColor = .white
-        let backButtonAppearance = UIBarButtonItemAppearance()
-        backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear]
-        standard.backButtonAppearance = backButtonAppearance
-        navigationController.navigationBar.standardAppearance = standard
-        navigationController.navigationBar.scrollEdgeAppearance = standard
-        navigationController.navigationBar.tintColor = .black
-        return navigationController
     }
 }

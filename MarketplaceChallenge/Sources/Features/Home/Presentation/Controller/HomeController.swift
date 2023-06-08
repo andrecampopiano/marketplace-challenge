@@ -8,7 +8,7 @@
 import CoreSwift
 import UIKit
 
-final class HomeController: UIViewController {
+class HomeController: UIViewController {
     
     // MARK: - Constants
     
