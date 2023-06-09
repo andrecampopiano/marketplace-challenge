@@ -12,7 +12,7 @@ protocol HomeViewModelProtocol {
     
     var status: Dynamic<HomeStatus?> { get }
     
-    func fetchProductList(completion: @escaping ProductListGetCompletion)
+    func fetchProductList()
 }
 
 class HomeViewModel: HomeViewModelProtocol {
@@ -28,7 +28,7 @@ class HomeViewModel: HomeViewModelProtocol {
     
     // MARK: - Public Methods
     
-    func fetchProductList(completion: @escaping ProductListGetCompletion) {
+    func fetchProductList() {
         self.manager?.fetchProductList { [weak self] result in
             guard let self = self else { return }
             switch result {
