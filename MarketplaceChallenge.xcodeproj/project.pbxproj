@@ -51,6 +51,7 @@
 		94DC06B42A33A8F900EEE3F6 /* BaseXCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC06AF2A33A8F900EEE3F6 /* BaseXCTest.swift */; };
 		94DC06B52A33A8F900EEE3F6 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC06B12A33A8F900EEE3F6 /* Elements.swift */; };
 		94DC06B82A33AE7D00EEE3F6 /* product_item.json in Resources */ = {isa = PBXBuildFile; fileRef = 94DC06B72A33AE7D00EEE3F6 /* product_item.json */; };
+		94DC06BC2A3400DE00EEE3F6 /* HomeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC06BB2A3400DE00EEE3F6 /* HomeItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		94DC06AF2A33A8F900EEE3F6 /* BaseXCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseXCTest.swift; sourceTree = "<group>"; };
 		94DC06B12A33A8F900EEE3F6 /* Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
 		94DC06B72A33AE7D00EEE3F6 /* product_item.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = product_item.json; sourceTree = "<group>"; };
+		94DC06BB2A3400DE00EEE3F6 /* HomeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -573,6 +575,7 @@
 			isa = PBXGroup;
 			children = (
 				94DC06572A3374DF00EEE3F6 /* HomeViewModel.swift */,
+				94DC06BB2A3400DE00EEE3F6 /* HomeItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -794,6 +797,7 @@
 				94DC06692A338F4800EEE3F6 /* FontStyleAndName.swift in Sources */,
 				9401F4A72A30AFFB00C32AA7 /* HomeCoordinator.swift in Sources */,
 				9401F4662A2F7E0E00C32AA7 /* Colors.swift in Sources */,
+				94DC06BC2A3400DE00EEE3F6 /* HomeItemViewModel.swift in Sources */,
 				9401F4922A2FA90700C32AA7 /* HomeManager.swift in Sources */,
 				9401F4A12A2FCAA100C32AA7 /* main.swift in Sources */,
 				94A472F72A2E8E4A00686B4C /* AppDelegate.swift in Sources */,

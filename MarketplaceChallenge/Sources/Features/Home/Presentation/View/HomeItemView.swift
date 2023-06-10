@@ -8,23 +8,6 @@
 import CoreSwift
 import UIKit
 
-protocol HomeItemViewModelProtocol {
-    var model: Dynamic<ProductResponse?> { get }
-}
-
-final class HomeItemViewModel: HomeItemViewModelProtocol {
-    
-    // MARK: - Properties
-    
-    var model = Dynamic<ProductResponse?>(nil)
-    
-    // MARK: - Initialize
-    
-    init(model: ProductResponse) {
-        self.model.value = model
-    }
-}
-
 final class HomeItemView: UITableViewCell {
     
     // MARK: - Constants
