@@ -12,6 +12,10 @@ enum LocalizableBundle: String {
     
     case homeControllerNavigationTitle
     
+    // MARK: - HomeItemView
+    
+    case homeItemViewPrimaryButtonName
+    
     var localize: String {
         return rawValue.localize(bundle: .main)
     }

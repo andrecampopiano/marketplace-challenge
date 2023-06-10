@@ -56,5 +56,4 @@ class HomeViewModel: HomeViewModelProtocol {
     private func handlerError(error: Error) {
         self.status.value = .error
     }
-    
 }

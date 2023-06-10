@@ -7,3 +7,7 @@
 */
 
 "homeControllerNavigationTitle" = "Lista de Produtos";
+
+// MARK: - HomeItemView
+
+"homeItemViewPrimaryButtonName" = "Detalhes";
