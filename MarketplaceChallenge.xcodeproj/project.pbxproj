@@ -29,6 +29,8 @@
 		94373CC92A30DFF600C6091E /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94373CC82A30DFF600C6091E /* CoordinatorFactory.swift */; };
 		94373CDF2A3105F500C6091E /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94373CDE2A3105F500C6091E /* UINavigationController.swift */; };
 		94407E122A375EFF0083C9D2 /* HomeControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94407E112A375EFF0083C9D2 /* HomeControllerFactoryTests.swift */; };
+		94407E152A37652A0083C9D2 /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94407E142A37652A0083C9D2 /* ApplicationCoordinatorTests.swift */; };
+		94407E192A376DE60083C9D2 /* HomeCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94407E182A376DE50083C9D2 /* HomeCoordinatorTests.swift */; };
 		94A472F72A2E8E4A00686B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472F62A2E8E4A00686B4C /* AppDelegate.swift */; };
 		94A472FB2A2E8E4A00686B4C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472FA2A2E8E4A00686B4C /* HomeController.swift */; };
 		94A473002A2E8E4C00686B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A472FF2A2E8E4C00686B4C /* Assets.xcassets */; };
@@ -108,6 +110,8 @@
 		94373CDE2A3105F500C6091E /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		94407E0F2A375E0D0083C9D2 /* MarketplaceChallenge.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = MarketplaceChallenge.xctestplan; path = MarketplaceChallengeTests/XCTestPlan/MarketplaceChallenge.xctestplan; sourceTree = "<group>"; };
 		94407E112A375EFF0083C9D2 /* HomeControllerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerFactoryTests.swift; sourceTree = "<group>"; };
+		94407E142A37652A0083C9D2 /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
+		94407E182A376DE50083C9D2 /* HomeCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorTests.swift; sourceTree = "<group>"; };
 		94A472F32A2E8E4A00686B4C /* MarketplaceChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A472F62A2E8E4A00686B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94A472FA2A2E8E4A00686B4C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -416,6 +420,22 @@
 			path = UINavigationController;
 			sourceTree = "<group>";
 		};
+		94407E132A3765090083C9D2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				94407E142A37652A0083C9D2 /* ApplicationCoordinatorTests.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		94407E172A376DD00083C9D2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				94407E182A376DE50083C9D2 /* HomeCoordinatorTests.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		94A472EA2A2E8E4A00686B4C = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +469,7 @@
 		94A4730C2A2E8E4C00686B4C /* MarketplaceChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				9401F4982A2FAC7600C32AA7 /* Infrastructure */,
 				9401F49C2A2FAD4500C32AA7 /* Resources */,
 				94A473372A2E9AB200686B4C /* Sources */,
 			);
@@ -515,7 +536,6 @@
 		94A473372A2E9AB200686B4C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9401F4982A2FAC7600C32AA7 /* Infrastructure */,
 				94A473382A2E9AB800686B4C /* Features */,
 			);
 			path = Sources;
@@ -524,6 +544,7 @@
 		94A473382A2E9AB800686B4C /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				94407E132A3765090083C9D2 /* Application */,
 				94A473392A2E9ABD00686B4C /* Home */,
 			);
 			path = Features;
@@ -542,6 +563,7 @@
 		94A4733A2A2E9AC200686B4C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				94407E172A376DD00083C9D2 /* Coordinator */,
 				94DC066E2A339ED300EEE3F6 /* View */,
 				94A4733B2A2E9AC800686B4C /* Controller */,
 			);
@@ -819,7 +841,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94407E192A376DE60083C9D2 /* HomeCoordinatorTests.swift in Sources */,
 				9401F4962A2FAA4C00C32AA7 /* HomeManagerTests.swift in Sources */,
+				94407E152A37652A0083C9D2 /* ApplicationCoordinatorTests.swift in Sources */,
 				94DC06B42A33A8F900EEE3F6 /* BaseXCTest.swift in Sources */,
 				94DC06702A339EE600EEE3F6 /* HomeItemViewTests.swift in Sources */,
 				94A4730E2A2E8E4C00686B4C /* HomeControllerTests.swift in Sources */,

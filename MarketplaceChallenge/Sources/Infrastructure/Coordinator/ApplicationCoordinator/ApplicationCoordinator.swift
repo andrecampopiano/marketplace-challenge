@@ -16,13 +16,14 @@ class ApplicationCoordinator: BaseCoordinator {
     
     private let coordinatorFactory: CoordinatorFactoryProtocol
     private let router: RouterProtocol
-    private let controllerFactory: ControllerFactoryProtocol = ControllerFactory()
+    private let controllerFactory: ControllerFactoryProtocol
     
     // MARK: - Initialize
     
-    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) {
+    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, controllerFactory: ControllerFactoryProtocol = ControllerFactory()) {
         self.router = router
         self.coordinatorFactory = coordinatorFactory
+        self.controllerFactory = controllerFactory
     }
     
     // MARK: - Override Methods

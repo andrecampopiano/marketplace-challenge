@@ -1,6 +1,6 @@
 //
 //  XCTestExtensionView.swift
-//  GitHubUserInformationTests
+//  MarketplaceChallengeTests
 //
 //  Created by Andre Luis Campopiano on 20/05/23.
 //
@@ -18,7 +18,6 @@ extension UIView {
         return renderer.image { rendererContext in
             layer.render(in: rendererContext.cgContext)
         }
-        
     }
     
     /// subviewsRecursive

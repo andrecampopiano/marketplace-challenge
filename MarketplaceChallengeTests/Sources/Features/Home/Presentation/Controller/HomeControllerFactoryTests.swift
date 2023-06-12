@@ -6,11 +6,10 @@
 //
 
 import CoreSwift
-import iOSSnapshotTestCase
 @testable import MarketplaceChallenge
 import XCTest
 
-private class MockHomeViewModel: HomeViewModelProtocol {
+private final class MockHomeViewModel: HomeViewModelProtocol {
     var status = Dynamic<HomeStatus?>(nil)
     
     var itemsViewModel: [HomeItemViewModelProtocol]?
@@ -20,8 +19,7 @@ private class MockHomeViewModel: HomeViewModelProtocol {
     func getItemViewModel(row: Int) -> MarketplaceChallenge.HomeItemViewModelProtocol? { return nil }
 }
 
-
-class HomeControllerFactoryTests: BaseXCTest {
+final class HomeControllerFactoryTests: BaseXCTest {
     
     // MARK: - Properties
     
