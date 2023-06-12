@@ -32,7 +32,7 @@ final class HomeItemView: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: .light, size: .medium)
+        label.font = UIFont(name: .regular, size: .medium)
         label.textColor = .neutralDarkGrey
         label.textAlignment = .center
         label.numberOfLines = .zero
@@ -47,22 +47,10 @@ final class HomeItemView: UITableViewCell {
         return imageView
     }()
     
-    private lazy var containerSizeView: UIStackView = {
-        let view = UIStackView()
-        view.cornerRadius = .size(.nano)
-        view.axis = .vertical
-        view.backgroundColor = .neutralWhite
-        view.borderColor = .neutralDarkGrey
-        view.borderWidth = 1
-        view.spacing = .spacing(.zero)
-        view.distribution = .fillEqually
-        return view
-    }()
-    
     private lazy var primaryButton: UIButton = {
         let button = UIButton()
         button.cornerRadius = .size(.extraSmall)
-        button.backgroundColor = .secondaryGreen
+        button.backgroundColor = .neutralBlack
         button.setTitle(Constants.primaryButtonName, for: .normal)
         button.titleLabel?.font = UIFont(name: .bold, size: .small)
         return button
@@ -99,17 +87,18 @@ final class HomeItemView: UITableViewCell {
     
     static func instantiate(viewModel: HomeItemViewModelProtocol) -> HomeItemView {
         let view = HomeItemView()
-        view.viewModel = viewModel
-        view.setup()
         return view
     }
     
-    // MARK: - Private Methods
+    // MARK: - Public Methods
     
-    private func setup() {
+    func setup(viewModel: HomeItemViewModelProtocol) {
+        self.viewModel = viewModel
         bindElements()
         setupLayout()
     }
+    
+    // MARK: - Private Methods
     
     private func bindElements() {
         viewModel?.model.bind { [weak self] model in
@@ -120,7 +109,6 @@ final class HomeItemView: UITableViewCell {
             self.priceLabel.text = model?.actualPrice
             self.originalPriceLabel.text = model?.regularPrice
             self.originalPriceLabel.isHidden = model?.onSale == false
-            self.setupSizes(model: model?.sizes)
         }
     }
     
@@ -134,33 +122,12 @@ final class HomeItemView: UITableViewCell {
         mainImageView.contentMode = .scaleToFill
     }
 
-    private func setupSizes(model: [ProductSizeResponse]?) {
-        guard let model = model else { return }
-        let label = UILabel()
-        label.font = UIFont(name: .bold, size: .extraMinimum)
-        label.textColor = .neutralWhite
-        label.backgroundColor = .neutralDarkGrey
-        label.text = "Tam"
-        label.textAlignment = .center
-        containerSizeView.addArrangedSubview(label)
-        for item in model {
-            let label = UILabel()
-            label.text = item.size
-            label.textAlignment = .center
-            label.borderColor = .neutralDarkGrey
-            label.borderWidth = 0.5
-            label.textColor = .neutralDarkGrey
-            label.font = UIFont(name: .light, size: .extraMinimum)
-            containerSizeView.addArrangedSubview(label)
-        }
-    }
-    
     private func setupLayout() {
         backgroundColor = .neutralLightGrey
+        selectionStyle = .none
         setupContainerViewLayout()
         setupTitleLayout()
         setupMainImageViewLayout()
-        setupContainerSizeViewLayout()
         setupPrimaryButtonLayout()
         setupInstallmentsLabelLayout()
         setupPriceLabelLayout()
@@ -171,12 +138,11 @@ final class HomeItemView: UITableViewCell {
         addSubview(containerView)
         containerView.anchor(left: safeLeftAnchor,
                              right: safeRightAnchor,
-                             paddingLeft: .spacing(.smaller),
-                             paddingRight: .spacing(.smaller))
+                             paddingLeft: .spacing(.medium),
+                             paddingRight: .spacing(.medium))
         containerView.anchor(top: safeTopAnchor,
                              bottom: safeBottomAnchor,
-                             paddingTop: .spacing(.smaller),
-                             paddingBottom: .spacing(.smaller))
+                             paddingBottom: .spacing(.extraSmall))
     }
     
     private func setupTitleLayout() {
@@ -185,8 +151,8 @@ final class HomeItemView: UITableViewCell {
                           paddingTop: .spacing(.small))
         titleLabel.anchor(left: containerView.safeLeftAnchor,
                           right: containerView.safeRightAnchor,
-                          paddingLeft: .spacing(.extraSmall),
-                          paddingRight: .spacing(.extraSmall))
+                          paddingLeft: .spacing(.small),
+                          paddingRight: .spacing(.small))
     }
     
     private func setupMainImageViewLayout() {
@@ -198,25 +164,15 @@ final class HomeItemView: UITableViewCell {
         mainImageView.anchor(width: Constants.mainImageViewWidth,
                              height: Constants.mainImageViewHeight)
         mainImageView.anchor(left: containerView.safeLeftAnchor,
-                             paddingLeft: .spacing(.extraSmall))
-    }
-    
-    private func setupContainerSizeViewLayout() {
-        containerView.addSubview(containerSizeView)
-        containerSizeView.anchor(top: mainImageView.safeTopAnchor,
-                                 bottom: mainImageView.safeBottomAnchor)
-        containerSizeView.anchor(left: mainImageView.safeRightAnchor, paddingLeft: .spacing(.extraSmall))
-        containerSizeView.anchor(width: .size(.medium))
+                             paddingLeft: .spacing(.small))
     }
     
     private func setupPrimaryButtonLayout() {
         containerView.addSubview(primaryButton)
         primaryButton.anchor(bottom: mainImageView.safeBottomAnchor,
                              paddingBottom: .spacing(.zero))
-        primaryButton.anchor(left: containerSizeView.safeRightAnchor,
-                             right: titleLabel.safeRightAnchor,
-                             paddingLeft: .spacing(.small))
-        primaryButton.anchor(height: .size(.big))
+        primaryButton.anchor(right: titleLabel.safeRightAnchor)
+        primaryButton.anchor(width: 100, height: .size(.big))
     }
     
     private func setupInstallmentsLabelLayout() {

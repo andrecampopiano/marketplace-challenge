@@ -4,6 +4,11 @@
 <dict>
 	<key>App Environment</key>
 	<string>${APP_ENVIRONMENT}</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>Server Url</key>
 	<string>${SERVER_URL}</string>
 </dict>

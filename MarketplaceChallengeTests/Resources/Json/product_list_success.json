@@ -159,6 +159,46 @@
                     "sku": "5749_341_0_GG"
                 }
             ]
+        },
+        {
+            "name": "T-SHIRT LEATHER DULL",
+            "style": "20002602",
+            "code_color": "20002602_027",
+            "color_slug": "marinho",
+            "color": "MARINHO",
+            "on_sale": true,
+            "regular_price": "R$ 139,90",
+            "actual_price": "R$ 119,90",
+            "discount_percentage": "12%",
+            "installments": "3x R$ 39,97",
+            "image": "",
+            "sizes": [
+                {
+                    "available": true,
+                    "size": "PP",
+                    "sku": "5793_1000032_0_PP"
+                },
+                {
+                    "available": true,
+                    "size": "P",
+                    "sku": "5793_1000032_0_P"
+                },
+                {
+                    "available": true,
+                    "size": "M",
+                    "sku": "5793_1000032_0_M"
+                },
+                {
+                    "available": false,
+                    "size": "G",
+                    "sku": "5793_1000032_0_G"
+                },
+                {
+                    "available": false,
+                    "size": "GG",
+                    "sku": "5793_1000032_0_GG"
+                }
+            ]
         }
     ]
 }

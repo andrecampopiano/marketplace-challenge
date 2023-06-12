@@ -10,6 +10,7 @@ import UIKit
 
 class HomeControllerFactory: ControllerFactoryProtocol {
     func instantiate() -> UIViewController? {
-        return HomeController.instantiate()
+        let viewModel = HomeViewModel()
+        return HomeController.instantiate(viewModel: viewModel)
     }
 }
