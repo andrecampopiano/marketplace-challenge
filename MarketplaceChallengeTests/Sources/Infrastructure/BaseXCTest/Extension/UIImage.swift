@@ -1,6 +1,6 @@
 //
 //  UIImage.swift
-//  GitHubUserInformationTests
+//  MarketplaceChallengeTests
 //
 //  Created by Andre Luis Campopiano on 20/05/23.
 //

@@ -1,6 +1,6 @@
 //
 //  BaseXCTest.swift
-//  GitHubUserInformationTests
+//  MarketplaceChallenge
 //
 //  Created by Andre Luis Campopiano on 20/05/23.
 //

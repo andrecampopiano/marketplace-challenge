@@ -1,0 +1,39 @@
+{
+  "configurations" : [
+    {
+      "id" : "E87D5696-36F0-45F8-992D-CE8B963E62DC",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "FB_REFERENCE_IMAGE_DIR",
+        "value" : "$(SOURCE_ROOT)\/$(PROJECT_NAME)Tests\/Snapshots\/ReferenceImages"
+      },
+      {
+        "key" : "IMAGE_DIFF_DIR",
+        "value" : "$(SOURCE_ROOT)\/$(PROJECT_NAME)Tests\/Snapshots\/FailureDiffs"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:MarketplaceChallenge.xcodeproj",
+      "identifier" : "94A472F22A2E8E4A00686B4C",
+      "name" : "MarketplaceChallenge"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:MarketplaceChallenge.xcodeproj",
+        "identifier" : "94A473082A2E8E4C00686B4C",
+        "name" : "MarketplaceChallengeTests"
+      }
+    }
+  ],
+  "version" : 1
+}

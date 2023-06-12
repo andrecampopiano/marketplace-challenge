@@ -28,6 +28,7 @@
 		94373CC72A30DC4000C6091E /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94373CC62A30DC4000C6091E /* ApplicationCoordinator.swift */; };
 		94373CC92A30DFF600C6091E /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94373CC82A30DFF600C6091E /* CoordinatorFactory.swift */; };
 		94373CDF2A3105F500C6091E /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94373CDE2A3105F500C6091E /* UINavigationController.swift */; };
+		94407E122A375EFF0083C9D2 /* HomeControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94407E112A375EFF0083C9D2 /* HomeControllerFactoryTests.swift */; };
 		94A472F72A2E8E4A00686B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472F62A2E8E4A00686B4C /* AppDelegate.swift */; };
 		94A472FB2A2E8E4A00686B4C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472FA2A2E8E4A00686B4C /* HomeController.swift */; };
 		94A473002A2E8E4C00686B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A472FF2A2E8E4C00686B4C /* Assets.xcassets */; };
@@ -105,6 +106,8 @@
 		94373CC62A30DC4000C6091E /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		94373CC82A30DFF600C6091E /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		94373CDE2A3105F500C6091E /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		94407E0F2A375E0D0083C9D2 /* MarketplaceChallenge.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = MarketplaceChallenge.xctestplan; path = MarketplaceChallengeTests/XCTestPlan/MarketplaceChallenge.xctestplan; sourceTree = "<group>"; };
+		94407E112A375EFF0083C9D2 /* HomeControllerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerFactoryTests.swift; sourceTree = "<group>"; };
 		94A472F32A2E8E4A00686B4C /* MarketplaceChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A472F62A2E8E4A00686B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94A472FA2A2E8E4A00686B4C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -416,6 +419,7 @@
 		94A472EA2A2E8E4A00686B4C = {
 			isa = PBXGroup;
 			children = (
+				94407E0F2A375E0D0083C9D2 /* MarketplaceChallenge.xctestplan */,
 				94A472F52A2E8E4A00686B4C /* MarketplaceChallenge */,
 				94A4730C2A2E8E4C00686B4C /* MarketplaceChallengeTests */,
 				94A472F42A2E8E4A00686B4C /* Products */,
@@ -548,6 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				94A4730D2A2E8E4C00686B4C /* HomeControllerTests.swift */,
+				94407E112A375EFF0083C9D2 /* HomeControllerFactoryTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -820,6 +825,7 @@
 				94A4730E2A2E8E4C00686B4C /* HomeControllerTests.swift in Sources */,
 				94DC06602A3377F200EEE3F6 /* HomeViewModelTests.swift in Sources */,
 				94DC06B52A33A8F900EEE3F6 /* Elements.swift in Sources */,
+				94407E122A375EFF0083C9D2 /* HomeControllerFactoryTests.swift in Sources */,
 				9401F49B2A2FACBB00C32AA7 /* MarketplaceChallengeTests.swift in Sources */,
 				94DC06B22A33A8F900EEE3F6 /* XCTestExtensionView.swift in Sources */,
 				94DC06B32A33A8F900EEE3F6 /* UIImage.swift in Sources */,
@@ -938,10 +944,10 @@
 				SERVER_URL = "http://www.mocky.io";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Develop;
 		};
@@ -954,7 +960,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FLM2WYKE6E;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.andrecampopiano.MarketplaceChallengeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1045,10 +1051,10 @@
 				SERVER_URL = "http://www.mocky.io";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1061,7 +1067,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FLM2WYKE6E;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.andrecampopiano.MarketplaceChallengeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1212,10 +1218,10 @@
 				SERVER_URL = "http://www.mocky.io";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1245,10 +1251,10 @@
 				SERVER_URL = "http://www.mocky.io";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Homologation;
 		};
@@ -1261,7 +1267,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FLM2WYKE6E;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.andrecampopiano.MarketplaceChallengeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1281,7 +1287,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FLM2WYKE6E;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.andrecampopiano.MarketplaceChallengeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

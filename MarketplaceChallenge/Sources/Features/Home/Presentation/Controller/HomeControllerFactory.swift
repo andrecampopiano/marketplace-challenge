@@ -9,8 +9,14 @@ import CoreSwift
 import UIKit
 
 class HomeControllerFactory: ControllerFactoryProtocol {
+    
+    private var viewModel: HomeViewModelProtocol
+    
+    init(viewModel: HomeViewModelProtocol = HomeViewModel()) {
+        self.viewModel = viewModel
+    }
+    
     func instantiate() -> UIViewController? {
-        let viewModel = HomeViewModel()
         return HomeController.instantiate(viewModel: viewModel)
     }
 }
