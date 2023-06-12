@@ -87,6 +87,9 @@ final class HomeItemView: UITableViewCell {
     
     static func instantiate(viewModel: HomeItemViewModelProtocol) -> HomeItemView {
         let view = HomeItemView()
+        view.viewModel = viewModel
+        view.bindElements()
+        view.setupLayout()
         return view
     }
     

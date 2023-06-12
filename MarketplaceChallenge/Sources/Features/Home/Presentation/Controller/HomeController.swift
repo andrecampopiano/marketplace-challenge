@@ -84,13 +84,13 @@ class HomeController: UIViewController {
 
 extension HomeController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel?.status.value == .loaded ? self.viewModel?.model.value?.products?.count ?? .zero : .zero
+        return self.viewModel?.status.value == .loaded ? self.viewModel?.itemsViewModel?.count ?? .zero : .zero
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let item = viewModel?.model.value?.products?[indexPath.row] else { return UITableViewCell() }
+        guard let itemViewModel = viewModel?.getItemViewModel(row: indexPath.row) else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(HomeItemView.self, for: indexPath)
-        cell.setup(viewModel: HomeItemViewModel(model: item))
+        cell.setup(viewModel: itemViewModel)
         return cell
     }
 }

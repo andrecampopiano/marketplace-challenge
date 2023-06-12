@@ -35,8 +35,8 @@ final class HomeViewModelTests: XCTestCase {
         makeSut(manager: MockHomeManagerWithSucces())
         sut?.status.bind(skip: true) { status in
             if status == .loaded {
-                XCTAssertNotNil(self.sut?.model.value?.products)
-                XCTAssertEqual(self.sut?.model.value?.products?.count, 4)
+                XCTAssertNotNil(self.sut?.itemsViewModel)
+                XCTAssertEqual(self.sut?.itemsViewModel?.count, 5)
                 XCTAssertEqual(self.sut?.status.value, .loaded)
                 expectation.fulfill()
             }

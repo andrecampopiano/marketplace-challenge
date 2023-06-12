@@ -10,18 +10,12 @@ import iOSSnapshotTestCase
 @testable import MarketplaceChallenge
 import XCTest
 
-private class MockHomeViewModel: HomeViewModelProtocol {
-    
-    var status = Dynamic<HomeStatus?>(nil)
-    var model = Dynamic<ProductListResponse?>(nil)
-    var itemViewModel: [HomeItemViewModelProtocol]?
-    
-    func fetchProductList() {
+private class HomeManagerMock: HomeManagerProtocol {
+    func fetchProductList(completion: @escaping ProductListGetCompletion) {
         let file = FileRepresentation(withFileName: "product_list_success", fileExtension: .json, fileBundle: Bundle(for: MarketplaceChallengeTests.self))
         guard let data = file.data,
               let response = try? JSONDecoder().decode(ProductListResponse.self, from: data) else { return }
-        self.model.value = response
-        self.status.value = .loaded
+        completion(.success(response))
     }
 }
 
@@ -30,7 +24,7 @@ final class HomeControllerTests: BaseXCTest {
     // MARK: - Properties
     
     private var sut: HomeController?
-    private var viewModel: MockHomeViewModel? = MockHomeViewModel()
+    private var viewModel: HomeViewModelProtocol?
     
     // MARK: - Override Methods
     
@@ -47,15 +41,15 @@ final class HomeControllerTests: BaseXCTest {
     // MARK: - Test Methods
     
     func test_asset_properties() {
+        viewModel = HomeViewModel(manager: HomeManagerMock())
         makeSut(viewModel: viewModel)
         viewModel?.status.value = .loaded
         XCTAssertEqual(sut?.title, "Lista de Produtos")
     }
     
     func test_snapshot_with_succes() {
+        viewModel = HomeViewModel(manager: HomeManagerMock())
         makeSut(viewModel: viewModel)
-        
-        recordMode = true
         guard let sut = sut else { return }
         verifySnapshotView(delay: 2) {
             sut.view

@@ -43,7 +43,7 @@ final class HomeManagerTests: XCTestCase {
     
     private func assetsProductList(model: ProductListResponse) {
         XCTAssertNotNil(model)
-        XCTAssertEqual(model.products?.count, 4)
+        XCTAssertEqual(model.products?.count, 5)
         assetFirstProduct(model: model.products?[0])
         assetSecoundProduct(model: model.products?[1])
         assetThirdProduct(model: model.products?[2])

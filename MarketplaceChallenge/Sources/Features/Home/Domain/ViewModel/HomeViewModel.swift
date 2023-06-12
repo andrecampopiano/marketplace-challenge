@@ -11,9 +11,10 @@ import Foundation
 protocol HomeViewModelProtocol {
     
     var status: Dynamic<HomeStatus?> { get }
-    var model: Dynamic<ProductListResponse?> { get }
+    var itemsViewModel: [HomeItemViewModelProtocol]? { get }
     
     func fetchProductList()
+    func getItemViewModel(row: Int) -> HomeItemViewModelProtocol?
 }
 
 class HomeViewModel: HomeViewModelProtocol {
@@ -21,7 +22,7 @@ class HomeViewModel: HomeViewModelProtocol {
     // MARK: - Properties
     
     var status = Dynamic<HomeStatus?>(nil)
-    var model = Dynamic<ProductListResponse?>(nil)
+    var itemsViewModel: [HomeItemViewModelProtocol]?
     
     private var manager: HomeManagerProtocol?
     
@@ -46,14 +47,26 @@ class HomeViewModel: HomeViewModelProtocol {
         }
     }
     
+    func getItemViewModel(row: Int) -> HomeItemViewModelProtocol? {
+        return itemsViewModel?[row]
+    }
+    
     // MARK: - Private Methods
     
     private func handlerSuccess(model: ProductListResponse) {
-        self.model.value = model
+        setupItemViewModel(products: model.products)
         self.status.value = .loaded
     }
     
     private func handlerError(error: Error) {
         self.status.value = .error
+    }
+    
+    private func setupItemViewModel(products: [ProductResponse]?) {
+        self.itemsViewModel = []
+        guard let products = products else { return }
+        for item in products {
+            self.itemsViewModel?.append(HomeItemViewModel(model: item))
+        }
     }
 }

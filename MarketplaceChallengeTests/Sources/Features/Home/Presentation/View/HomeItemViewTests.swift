@@ -21,7 +21,6 @@ class HomeItemViewTests: BaseXCTest {
     
     override func setUp() {
         super.setUp()
-        recordMode = true
     }
     
     override func tearDown() {
@@ -33,7 +32,8 @@ class HomeItemViewTests: BaseXCTest {
     // MARK: - Tests Methods
     
     func test_snapshot_with_default_values() {
-        makeSut(viewModel: MockHomeItemViewModel())
+        self.viewModel = MockHomeItemViewModel()
+        makeSut()
         sut?.frame = CGRect(x: .zero, y: .zero, width: 320, height: 196)
         verifySnapshotView(delay: 2) {
             self.sut
@@ -42,7 +42,8 @@ class HomeItemViewTests: BaseXCTest {
     
     // MARK: - Private Methods
     
-    private func makeSut(viewModel: HomeItemViewModelProtocol) {
+    private func makeSut() {
+        guard let viewModel = viewModel else { return }
         sut = HomeItemView.instantiate(viewModel: viewModel)
     }
 }
