@@ -8,6 +8,16 @@
 import CoreSwift
 import UIKit
 
+enum HomeItemViewIdentifiers: String {
+    case containerView = "homeItemView_containerView_id"
+    case titleLabel = "homeItemView_titleLabel_id"
+    case mainImageView = "homeItemView_mainImageView_id"
+    case primaryButton = "homeItemView_primaryButton_id"
+    case originalPriceLabel = "homeItemView_originalPriceLabel_id"
+    case priceLabel = "homeItemView_priceLabel_id"
+    case installmentsLabel = "homeItemView_installmentsLabel_id"
+}
+
 final class HomeItemView: UITableViewCell {
     
     // MARK: - Constants
@@ -27,6 +37,7 @@ final class HomeItemView: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .neutralWhite
         view.cornerRadius = .size(.extraSmall)
+        view.accessibilityIdentifier = HomeItemViewIdentifiers.containerView.rawValue
         return view
     }()
     
@@ -36,6 +47,7 @@ final class HomeItemView: UITableViewCell {
         label.textColor = .neutralDarkGrey
         label.textAlignment = .center
         label.numberOfLines = .zero
+        label.accessibilityIdentifier = HomeItemViewIdentifiers.titleLabel.rawValue
         return label
     }()
     
@@ -44,6 +56,7 @@ final class HomeItemView: UITableViewCell {
         imageView.borderColor = .neutralDarkGrey
         imageView.borderWidth = 1
         imageView.cornerRadius = .size(.nano)
+        imageView.accessibilityIdentifier = HomeItemViewIdentifiers.mainImageView.rawValue
         return imageView
     }()
     
@@ -53,6 +66,7 @@ final class HomeItemView: UITableViewCell {
         button.backgroundColor = .neutralBlack
         button.setTitle(Constants.primaryButtonName, for: .normal)
         button.titleLabel?.font = UIFont(name: .bold, size: .small)
+        button.accessibilityIdentifier = HomeItemViewIdentifiers.primaryButton.rawValue
         return button
     }()
     
@@ -62,6 +76,7 @@ final class HomeItemView: UITableViewCell {
         label.textAlignment = .right
         label.font = UIFont(name: .light, size: .extraMinimum)
         label.textColor = .neutralDarkGrey
+        label.accessibilityIdentifier = HomeItemViewIdentifiers.originalPriceLabel.rawValue
         return label
     }()
     
@@ -71,6 +86,7 @@ final class HomeItemView: UITableViewCell {
         label.textAlignment = .right
         label.textColor = .neutralDarkGrey
         label.font = UIFont(name: .light, size: .minimum)
+        label.accessibilityIdentifier = HomeItemViewIdentifiers.priceLabel.rawValue
         return label
     }()
     
@@ -80,6 +96,7 @@ final class HomeItemView: UITableViewCell {
         label.textAlignment = .right
         label.textColor = .neutralDarkGrey
         label.font = UIFont(name: .light, size: .small)
+        label.accessibilityIdentifier = HomeItemViewIdentifiers.installmentsLabel.rawValue
         return label
     }()
     

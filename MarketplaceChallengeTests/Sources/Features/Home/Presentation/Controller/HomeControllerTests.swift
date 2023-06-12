@@ -6,7 +6,7 @@
 //
 
 import CoreSwift
-import iOSSnapshotTestCase
+import Foundation
 @testable import MarketplaceChallenge
 import XCTest
 
@@ -40,7 +40,7 @@ final class HomeControllerTests: BaseXCTest {
     
     // MARK: - Test Methods
     
-    func test_asset_properties() {
+    func test_assert_properties() {
         viewModel = HomeViewModel(manager: HomeManagerMock())
         makeSut(viewModel: viewModel)
         viewModel?.status.value = .loaded
