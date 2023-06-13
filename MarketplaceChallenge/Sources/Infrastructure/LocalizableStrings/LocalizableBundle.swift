@@ -16,6 +16,11 @@ enum LocalizableBundle: String {
     
     case homeItemViewPrimaryButtonName
     
+    // MARK: - ButtonBuyFooterView
+    
+    case buttonBuyFooterViewPrimaryButtonName
+    case buttonBuyFooterViewSecoundaryButtonName
+    
     var localize: String {
         return rawValue.localize(bundle: .main)
     }

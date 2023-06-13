@@ -11,3 +11,9 @@
 // MARK: - HomeItemView
 
 "homeItemViewPrimaryButtonName" = "Comprar";
+
+// MARK: - ButtonBuyFooterView
+
+"buttonBuyFooterViewPrimaryButtonName" = "Adicionar ao Carrinho";
+"buttonBuyFooterViewSecoundaryButtonName" = "Comprar";
+

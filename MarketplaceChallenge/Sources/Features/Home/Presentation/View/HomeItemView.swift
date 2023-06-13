@@ -6,6 +6,7 @@
 //
 
 import CoreSwift
+import SVGKit
 import UIKit
 
 enum HomeItemViewIdentifiers: String {
@@ -100,7 +101,7 @@ final class HomeItemView: UITableViewCell {
         return label
     }()
     
-    // MARK: - Initialize
+    // MARK: - Instantiate
     
     static func instantiate(viewModel: HomeItemViewModelProtocol) -> HomeItemView {
         let view = HomeItemView()
@@ -138,8 +139,9 @@ final class HomeItemView: UITableViewCell {
             mainImageView.contentMode = .scaleAspectFill
             return
         }
-        self.mainImageView.image = UIImage(named: Constants.mainImageNameDefault)
-        mainImageView.contentMode = .scaleToFill
+        let image = SVGKImage(named: Constants.mainImageNameDefault)
+        self.mainImageView.image = image?.uiImage
+        self.mainImageView.contentMode = .scaleToFill
     }
 
     private func setupLayout() {

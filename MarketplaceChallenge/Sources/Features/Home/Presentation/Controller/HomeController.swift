@@ -103,4 +103,12 @@ extension HomeController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewModel = DetailsControllerViewModel()
+        let controller = DetailsController.instantiate(viewModel: viewModel)
+        let model = self.viewModel?.itemsViewModel?[indexPath.row].model.value
+        viewModel.setup(model: model)
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }

@@ -16,7 +16,7 @@ private final class MockHomeViewModel: HomeViewModelProtocol {
     
     func fetchProductList() { }
     
-    func getItemViewModel(row: Int) -> MarketplaceChallenge.HomeItemViewModelProtocol? { return nil }
+    func getItemViewModel(row: Int) -> HomeItemViewModelProtocol? { return nil }
 }
 
 final class HomeControllerFactoryTests: BaseXCTest {

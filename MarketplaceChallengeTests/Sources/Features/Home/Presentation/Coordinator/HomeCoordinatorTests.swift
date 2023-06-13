@@ -9,7 +9,6 @@ import CoreSwift
 @testable import MarketplaceChallenge
 import XCTest
 
-
 private final class MockBaseCoordinator: BaseCoordinator {
     
     private let router: RouterProtocol
