@@ -40,6 +40,12 @@ final class DetailsController: UIViewController {
         return imageView
     }()
     
+    private lazy var sizeView: SizeComponentView = {
+        let view = SizeComponentView()
+        
+        return view
+    }()
+    
     private lazy var containerFooterView: UIView = {
         let view = UIView()
         view.backgroundColor = .neutralLightGrey
@@ -82,6 +88,7 @@ final class DetailsController: UIViewController {
     
     private func setupData() {
         bindElements()
+        sizeView.setup(viewModel: viewModel?.sizeViewModel)
         productDetailsView.setup(viewModel: viewModel?.productDetailsViewModel)
     }
     
@@ -107,6 +114,7 @@ final class DetailsController: UIViewController {
         setupContainerFooterViewLayout()
         setupFooterViewLayout()
         setupProductDetailsViewLayout()
+        setupSizeViewLayout()
         setupMainImageViewLayout()
     }
     
@@ -120,13 +128,27 @@ final class DetailsController: UIViewController {
     private func setupMainImageViewLayout() {
         view.addSubview(mainImageView)
         mainImageView.anchor(top: view.safeTopAnchor,
-                             bottom: containerFooterView.safeTopAnchor,
+                             bottom: sizeView.safeTopAnchor,
                              paddingTop: .spacing(.medium),
                              paddingBottom: .spacing(.medium))
         mainImageView.anchor(left: view.safeLeftAnchor,
                              right: view.safeRightAnchor,
                              paddingLeft: .spacing(.medium),
                              paddingRight: .spacing(.medium))
+    }
+    
+    private func setupSizeViewLayout() {
+        view.addSubview(sizeView)
+        sizeView.anchor(bottom: productDetailsView.safeTopAnchor,
+                        paddingBottom: .size(.small))
+        sizeView.anchor(horizontal: view.centerXAnchor)
+//        sizeView.anchor(left: view.safeLeftAnchor,
+//                        right: view.safeRightAnchor,
+//                        paddingLeft: .spacing(.medium),
+//                        paddingRight: .spacing(.medium))
+        sizeView.anchor(height: .spacing(.large))
+        guard let count = viewModel?.model.value?.sizes?.count else { return }
+        sizeView.anchorWidth(greaterThanOrEqualToConstant: .spacing(.large) * CGFloat(count), horizontalParent: view, maxPadding: .spacing(.medium))
     }
     
     private func setupProductDetailsViewLayout() {

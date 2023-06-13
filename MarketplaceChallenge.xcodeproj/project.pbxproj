@@ -42,6 +42,9 @@
 		94407E492A38270E0083C9D2 /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 94407E482A38270E0083C9D2 /* SVGKitSwift */; };
 		94407E4E2A382C970083C9D2 /* icon_market.svg in Resources */ = {isa = PBXBuildFile; fileRef = 94407E4D2A382C970083C9D2 /* icon_market.svg */; };
 		94407E502A383A100083C9D2 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 94407E4F2A383A100083C9D2 /* SVGKit */; };
+		94407E532A3897950083C9D2 /* SizeComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94407E522A3897950083C9D2 /* SizeComponentView.swift */; };
+		94407E572A389FF30083C9D2 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94407E562A389FF30083C9D2 /* UICollectionView.swift */; };
+		94407E5B2A38A4D00083C9D2 /* SizeComponentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94407E5A2A38A4D00083C9D2 /* SizeComponentItemView.swift */; };
 		94A472F72A2E8E4A00686B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472F62A2E8E4A00686B4C /* AppDelegate.swift */; };
 		94A472FB2A2E8E4A00686B4C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472FA2A2E8E4A00686B4C /* HomeController.swift */; };
 		94A473002A2E8E4C00686B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A472FF2A2E8E4C00686B4C /* Assets.xcassets */; };
@@ -132,6 +135,9 @@
 		94407E3B2A37F4200083C9D2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		94407E3F2A38027D0083C9D2 /* DetailsControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsControllerViewModel.swift; sourceTree = "<group>"; };
 		94407E4D2A382C970083C9D2 /* icon_market.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = icon_market.svg; sourceTree = "<group>"; };
+		94407E522A3897950083C9D2 /* SizeComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeComponentView.swift; sourceTree = "<group>"; };
+		94407E562A389FF30083C9D2 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		94407E5A2A38A4D00083C9D2 /* SizeComponentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeComponentItemView.swift; sourceTree = "<group>"; };
 		94A472F32A2E8E4A00686B4C /* MarketplaceChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A472F62A2E8E4A00686B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94A472FA2A2E8E4A00686B4C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -189,6 +195,7 @@
 		9401F4472A2F76E300C32AA7 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				94407E552A389FDC0083C9D2 /* UICollectionView */,
 				94407E3A2A37F4120083C9D2 /* UIView */,
 				94373CDD2A3105D000C6091E /* UINavigationController */,
 				9401F4632A2F7DEB00C32AA7 /* UIColors */,
@@ -504,6 +511,7 @@
 		94407E262A37B6420083C9D2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				94407E592A38A3B00083C9D2 /* View */,
 				94407E272A37B6480083C9D2 /* Button */,
 			);
 			path = Components;
@@ -596,6 +604,23 @@
 				94407E4D2A382C970083C9D2 /* icon_market.svg */,
 			);
 			path = icon_market;
+			sourceTree = "<group>";
+		};
+		94407E552A389FDC0083C9D2 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				94407E562A389FF30083C9D2 /* UICollectionView.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		94407E592A38A3B00083C9D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94407E522A3897950083C9D2 /* SizeComponentView.swift */,
+				94407E5A2A38A4D00083C9D2 /* SizeComponentItemView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		94A472EA2A2E8E4A00686B4C = {
@@ -984,6 +1009,7 @@
 				94DC06652A33828600EEE3F6 /* HomeItemView.swift in Sources */,
 				94A472FB2A2E8E4A00686B4C /* HomeController.swift in Sources */,
 				94DC06582A3374DF00EEE3F6 /* HomeViewModel.swift in Sources */,
+				94407E5B2A38A4D00083C9D2 /* SizeComponentItemView.swift in Sources */,
 				9401F46D2A2F7F6D00C32AA7 /* LocalizableBundle.swift in Sources */,
 				94DC066A2A338F4B00EEE3F6 /* FontSize.swift in Sources */,
 				9401F4832A2F8CE700C32AA7 /* HomeBusiness.swift in Sources */,
@@ -999,6 +1025,7 @@
 				94DC06692A338F4800EEE3F6 /* FontStyleAndName.swift in Sources */,
 				9401F4A72A30AFFB00C32AA7 /* HomeCoordinator.swift in Sources */,
 				9401F4662A2F7E0E00C32AA7 /* Colors.swift in Sources */,
+				94407E532A3897950083C9D2 /* SizeComponentView.swift in Sources */,
 				94DC06BC2A3400DE00EEE3F6 /* HomeItemViewModel.swift in Sources */,
 				9401F4922A2FA90700C32AA7 /* HomeManager.swift in Sources */,
 				94407E402A38027D0083C9D2 /* DetailsControllerViewModel.swift in Sources */,
@@ -1007,6 +1034,7 @@
 				94373CDF2A3105F500C6091E /* UINavigationController.swift in Sources */,
 				94DC06672A338F4500EEE3F6 /* UIFont.swift in Sources */,
 				94DC066C2A338F5500EEE3F6 /* Size.swift in Sources */,
+				94407E572A389FF30083C9D2 /* UICollectionView.swift in Sources */,
 				9401F47F2A2F858700C32AA7 /* ProductResponse.swift in Sources */,
 				9401F4872A2F92C500C32AA7 /* ProductListGetOperation.swift in Sources */,
 				94373CC72A30DC4000C6091E /* ApplicationCoordinator.swift in Sources */,
