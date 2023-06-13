@@ -23,6 +23,10 @@ final class DetailsController: UIViewController {
     
     private var viewModel: DetailsControllerViewModelProtocol?
     
+    private var collectionViewWidth: CGFloat {
+        CGFloat(self.viewModel?.model.value?.sizes?.count ?? 1) * .spacing(.large)
+    }
+    
     private lazy var containerImageView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -142,13 +146,8 @@ final class DetailsController: UIViewController {
         sizeView.anchor(bottom: productDetailsView.safeTopAnchor,
                         paddingBottom: .size(.small))
         sizeView.anchor(horizontal: view.centerXAnchor)
-//        sizeView.anchor(left: view.safeLeftAnchor,
-//                        right: view.safeRightAnchor,
-//                        paddingLeft: .spacing(.medium),
-//                        paddingRight: .spacing(.medium))
         sizeView.anchor(height: .spacing(.large))
-        guard let count = viewModel?.model.value?.sizes?.count else { return }
-        sizeView.anchorWidth(greaterThanOrEqualToConstant: .spacing(.large) * CGFloat(count), horizontalParent: view, maxPadding: .spacing(.medium))
+        sizeView.anchorWidth(greaterThanOrEqualToConstant: collectionViewWidth, horizontalParent: view, maxPadding: .spacing(.medium))
     }
     
     private func setupProductDetailsViewLayout() {
