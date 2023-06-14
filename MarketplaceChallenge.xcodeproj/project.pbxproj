@@ -45,6 +45,7 @@
 		94407E532A3897950083C9D2 /* SizeComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94407E522A3897950083C9D2 /* SizeComponentView.swift */; };
 		94407E572A389FF30083C9D2 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94407E562A389FF30083C9D2 /* UICollectionView.swift */; };
 		94407E5B2A38A4D00083C9D2 /* SizeComponentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94407E5A2A38A4D00083C9D2 /* SizeComponentItemView.swift */; };
+		94407E5D2A39235A0083C9D2 /* DetailsControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94407E5C2A39235A0083C9D2 /* DetailsControllerTests.swift */; };
 		94A472F72A2E8E4A00686B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472F62A2E8E4A00686B4C /* AppDelegate.swift */; };
 		94A472FB2A2E8E4A00686B4C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A472FA2A2E8E4A00686B4C /* HomeController.swift */; };
 		94A473002A2E8E4C00686B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A472FF2A2E8E4C00686B4C /* Assets.xcassets */; };
@@ -138,6 +139,7 @@
 		94407E522A3897950083C9D2 /* SizeComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeComponentView.swift; sourceTree = "<group>"; };
 		94407E562A389FF30083C9D2 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		94407E5A2A38A4D00083C9D2 /* SizeComponentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeComponentItemView.swift; sourceTree = "<group>"; };
+		94407E5C2A39235A0083C9D2 /* DetailsControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsControllerTests.swift; sourceTree = "<group>"; };
 		94A472F32A2E8E4A00686B4C /* MarketplaceChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketplaceChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A472F62A2E8E4A00686B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94A472FA2A2E8E4A00686B4C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 		94407E2D2A37BC4B0083C9D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				94407E5C2A39235A0083C9D2 /* DetailsControllerTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1051,6 +1054,7 @@
 				94407E152A37652A0083C9D2 /* ApplicationCoordinatorTests.swift in Sources */,
 				94DC06B42A33A8F900EEE3F6 /* BaseXCTest.swift in Sources */,
 				94DC06702A339EE600EEE3F6 /* HomeItemViewTests.swift in Sources */,
+				94407E5D2A39235A0083C9D2 /* DetailsControllerTests.swift in Sources */,
 				94A4730E2A2E8E4C00686B4C /* HomeControllerTests.swift in Sources */,
 				94407E252A37ACED0083C9D2 /* ButtonBuyFooterViewTests.swift in Sources */,
 				94407E312A37BDE70083C9D2 /* ProductDetailsViewTests.swift in Sources */,

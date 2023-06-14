@@ -70,7 +70,7 @@ final class DetailsController: UIViewController {
     
     // MARK: - Instantiate
     
-    static func instantiate(viewModel: DetailsControllerViewModelProtocol) -> DetailsController {
+    static func instantiate(viewModel: DetailsControllerViewModelProtocol?) -> DetailsController {
         let controller = DetailsController()
         controller.viewModel = viewModel
         return controller
