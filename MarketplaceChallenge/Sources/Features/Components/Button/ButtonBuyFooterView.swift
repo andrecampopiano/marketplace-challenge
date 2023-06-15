@@ -14,6 +14,11 @@ enum ButtonBuyFooterViewIdentifiers: String {
     case secoundaryButton = "buttonBuyFooterView_secoundaryButton_id"
 }
 
+protocol ButtonBuyFooterViewDelegate: AnyObject {
+    func clickPrimaryButton()
+    func clickSecondaryButton()
+}
+
 final class ButtonBuyFooterView: UIView {
     
     // MARK: - Constants
@@ -24,6 +29,8 @@ final class ButtonBuyFooterView: UIView {
     }
     
     // MARK: - Properties
+    
+    weak var delegate: ButtonBuyFooterViewDelegate?
     
     private lazy var containerView: UIStackView = {
         let stackView = UIStackView()
@@ -104,11 +111,11 @@ final class ButtonBuyFooterView: UIView {
     
     @objc
     private func clickPrimaryButton() {
-        print("clicou")
+        delegate?.clickPrimaryButton()
     }
     
     @objc
     private func clickSecondaryButton() {
-        print("clicou 2")
+        delegate?.clickSecondaryButton()
     }
 }

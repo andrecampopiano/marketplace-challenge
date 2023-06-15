@@ -11,8 +11,8 @@ protocol DetailsControllerViewModelProtocol {
     var model: Dynamic<ProductResponse?> { get }
     var productDetailsViewModel: ProductDetailsViewModelProtocol? { get }
     var sizeViewModel: SizeComponentViewModel? { get }
-    
-    func setup(model: ProductResponse?)
+
+    func addToCart()
 }
 
 final class DetailsControllerViewModel: DetailsControllerViewModelProtocol {
@@ -21,9 +21,11 @@ final class DetailsControllerViewModel: DetailsControllerViewModelProtocol {
     var sizeViewModel: SizeComponentViewModel?
     var productDetailsViewModel: ProductDetailsViewModelProtocol?
     
-    func setup(model: ProductResponse?) {
+    init(model: ProductResponse?) {
         self.model.value = model
         self.productDetailsViewModel = ProductDetailsViewModel(model: model)
         self.sizeViewModel = SizeComponentViewModel(model: model?.sizes)
     }
+
+    func addToCart() {}
 }

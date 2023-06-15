@@ -59,8 +59,8 @@ final class HomeControllerTests: BaseXCTest {
     // MARK: Private Methods
     
     private func makeSut(viewModel: HomeViewModelProtocol?) {
-        guard let viewModel = viewModel else { return }
-        sut = HomeController.instantiate(viewModel: viewModel)
+        sut = HomeController.instantiate()
+        sut?.viewModel = viewModel
         sut?.viewDidLoad()
         addControllerToWindow(sut ?? UIViewController())
     }

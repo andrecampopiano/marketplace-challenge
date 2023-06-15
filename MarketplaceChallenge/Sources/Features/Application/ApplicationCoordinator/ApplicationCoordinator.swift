@@ -8,8 +8,6 @@
 import CoreSwift
 import Foundation
 
-typealias ControllerFactory = HomeControllerFactory
-
 class ApplicationCoordinator: BaseCoordinator {
     
     // MARK: - Properties
@@ -35,9 +33,9 @@ class ApplicationCoordinator: BaseCoordinator {
     // MARK: - Private Methods
     
     private func showHomeFlow() {
-        let coordinator = self.coordinatorFactory.makeCoordinator(router: router,
-                                                                  coordinatorFactory: coordinatorFactory,
-                                                                  controllerFactory: controllerFactory)
+        let coordinator = self.coordinatorFactory.makeHomeCoordinator(router: router,
+                                                                      coordinatorFactory: coordinatorFactory,
+                                                                      controllerFactory: controllerFactory)
         addDependency(coordinator)
         coordinator.start()
     }

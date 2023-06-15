@@ -18,7 +18,8 @@ class HomeController: UIViewController {
     
     // MARK: - Properties
 
-    private var viewModel: HomeViewModelProtocol?
+    var viewModel: HomeViewModelProtocol?
+    var showDetailsFlow: ShowDetailsFlow?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -33,9 +34,8 @@ class HomeController: UIViewController {
     
     // MARK: - Instantiate
     
-    static func instantiate(viewModel: HomeViewModelProtocol) -> HomeController {
+    static func instantiate() -> HomeController {
         let viewController = HomeController()
-        viewController.viewModel = viewModel
         return viewController
     }
     
@@ -105,10 +105,7 @@ extension HomeController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewModel = DetailsControllerViewModel()
-        let controller = DetailsController.instantiate(viewModel: viewModel)
-        let model = self.viewModel?.itemsViewModel?[indexPath.row].model.value
-        viewModel.setup(model: model)
-        self.navigationController?.pushViewController(controller, animated: true)
+        let productItemModel = self.viewModel?.itemsViewModel?[indexPath.row].model.value
+        self.showDetailsFlow?(productItemModel)
     }
 }

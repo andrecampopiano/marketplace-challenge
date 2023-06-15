@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/andrecampopiano/CoreSwift",
       "state" : {
-        "revision" : "d5fcf11e2765f9b0b8f1526e166c5b6da746a7f8",
-        "version" : "1.1.0"
+        "revision" : "638c81d9c95f755101444eeabab58b170a3922e6",
+        "version" : "1.1.1"
       }
     },
     {

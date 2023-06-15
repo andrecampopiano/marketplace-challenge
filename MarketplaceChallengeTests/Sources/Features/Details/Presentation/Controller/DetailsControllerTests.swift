@@ -10,7 +10,7 @@ import Foundation
 @testable import MarketplaceChallenge
 
 private final class MockDetailsControllerViewModel: DetailsControllerViewModelProtocol {
-    
+   
     var model = Dynamic<ProductResponse?>(nil)
     var productDetailsViewModel: ProductDetailsViewModelProtocol?
     var sizeViewModel: SizeComponentViewModel?
@@ -25,6 +25,8 @@ private final class MockDetailsControllerViewModel: DetailsControllerViewModelPr
     }
     
     func setup(model: ProductResponse?) { }
+    
+    func addToCart() { }
 }
 
 final class DetailsControllerTests: BaseXCTest {
@@ -59,7 +61,8 @@ final class DetailsControllerTests: BaseXCTest {
     
     private func makeSut() {
         viewModel = MockDetailsControllerViewModel()
-        sut = DetailsController.instantiate(viewModel: viewModel)
+        sut = DetailsController.instantiate()
+        sut?.viewModel = viewModel
         sut?.viewDidLoad()
         sut?.view.setNeedsLayout()
         sut?.view.layoutIfNeeded()

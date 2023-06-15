@@ -47,3 +47,9 @@ struct ProductResponse: Decodable {
     var image: String?
     var sizes: [ProductSizeResponse]?
 }
+
+extension ProductResponse {
+    func isEqual(to product: ProductResponse) -> Bool {
+        return name == product.name
+    }
+}

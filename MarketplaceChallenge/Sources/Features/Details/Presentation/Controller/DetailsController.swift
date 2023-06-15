@@ -9,6 +9,8 @@ import CoreSwift
 import SVGKit
 import UIKit
 
+typealias ShowDetailsFlow = (_ model: ProductResponse?) -> Void
+
 final class DetailsController: UIViewController {
     
     // MARK: - Constants
@@ -21,7 +23,7 @@ final class DetailsController: UIViewController {
     
     // MARK: - Properties
     
-    private var viewModel: DetailsControllerViewModelProtocol?
+    var viewModel: DetailsControllerViewModelProtocol?
     
     private var collectionViewWidth: CGFloat {
         CGFloat(self.viewModel?.model.value?.sizes?.count ?? 1) * .spacing(.large)
@@ -65,14 +67,14 @@ final class DetailsController: UIViewController {
     
     private lazy var footerView: ButtonBuyFooterView = {
         let footerView = ButtonBuyFooterView.instantiate()
+        footerView.delegate = self
         return footerView
     }()
     
     // MARK: - Instantiate
     
-    static func instantiate(viewModel: DetailsControllerViewModelProtocol?) -> DetailsController {
+    static func instantiate() -> DetailsController {
         let controller = DetailsController()
-        controller.viewModel = viewModel
         return controller
     }
     
@@ -163,4 +165,12 @@ final class DetailsController: UIViewController {
                           right: containerFooterView.safeRightAnchor)
         footerView.anchor(height: .size(.xLarge))
     }
+}
+
+extension DetailsController: ButtonBuyFooterViewDelegate {
+    func clickPrimaryButton() {
+        viewModel?.addToCart()
+    }
+    
+    func clickSecondaryButton() { }
 }

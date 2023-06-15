@@ -13,7 +13,7 @@ private class MockHomeManagerWithSucces: HomeManagerProtocol {
     
     // MARK: - Public Methods
     
-    func fetchProductList(completion: @escaping MarketplaceChallenge.ProductListGetCompletion) {
+    func fetchProductList(completion: @escaping ProductListGetCompletion) {
         let file = FileRepresentation(withFileName: "product_list_success", fileExtension: .json, fileBundle: Bundle(for: MarketplaceChallengeTests.self))
         guard let data = file.data,
               let response = try? JSONDecoder().decode(ProductListResponse.self, from: data) else { return }

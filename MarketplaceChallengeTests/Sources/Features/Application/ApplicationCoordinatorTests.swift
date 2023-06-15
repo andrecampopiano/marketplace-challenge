@@ -26,7 +26,7 @@ private final class MockBaseCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        let vc = self.controllerFactory.instantiate()
+        let vc = self.controllerFactory.instantiateHomeController()
         self.router.push(vc)
     }
 }
@@ -34,6 +34,18 @@ private final class MockBaseCoordinator: BaseCoordinator {
 private final class MockControllerFactoryProtocol: ControllerFactoryProtocol {
     
     var controller: UIViewController?
+    
+    func instantiateHomeController() -> HomeController? {
+        return instantiate() as? HomeController
+    }
+    
+    func instantiateCartController() -> CartController? {
+        return instantiate() as? CartController
+    }
+    
+    func instantiateDetailsController(model: ProductResponse?) -> DetailsController? {
+        return instantiate() as? DetailsController
+    }
     
     func instantiate() -> UIViewController? {
         controller = UIViewController()
@@ -46,9 +58,19 @@ private final class MockCoordinatorFactory: CoordinatorFactoryProtocol {
     
     var coordinator: MockBaseCoordinator?
     
-    func makeCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, controllerFactory: ControllerFactoryProtocol) -> BaseCoordinator {
+    func makeHomeCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, controllerFactory: ControllerFactoryProtocol) -> BaseCoordinator {
         coordinator = MockBaseCoordinator(router: router, coordinatorFactory: coordinatorFactory, controllerFactory: controllerFactory)
-        return coordinator ?? MockBaseCoordinator(router: router, coordinatorFactory: coordinatorFactory, controllerFactory: controllerFactory)
+        return coordinator!
+    }
+    
+    func makeDetailsCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, controllerFactory: ControllerFactoryProtocol) -> BaseCoordinator {
+        coordinator = MockBaseCoordinator(router: router, coordinatorFactory: coordinatorFactory, controllerFactory: controllerFactory)
+        return coordinator!
+    }
+    
+    func makeCartCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, controllerFactory: ControllerFactoryProtocol) -> BaseCoordinator {
+        coordinator = MockBaseCoordinator(router: router, coordinatorFactory: coordinatorFactory, controllerFactory: controllerFactory)
+        return coordinator!
     }
 }
 

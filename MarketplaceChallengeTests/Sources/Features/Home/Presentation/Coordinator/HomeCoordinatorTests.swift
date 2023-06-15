@@ -25,13 +25,21 @@ private final class MockBaseCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        let vc = self.controllerFactory.instantiate()
+        let vc = self.controllerFactory.instantiateHomeController()
         self.router.push(vc)
     }
 }
 
 private final class MockCoordinatorFactory: CoordinatorFactoryProtocol {
-    func makeCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, controllerFactory: ControllerFactoryProtocol) -> BaseCoordinator {
+    func makeHomeCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, controllerFactory: ControllerFactoryProtocol) -> BaseCoordinator {
+        return MockBaseCoordinator(router: router, coordinatorFactory: coordinatorFactory, controllerFactory: controllerFactory)
+    }
+    
+    func makeDetailsCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, controllerFactory: ControllerFactoryProtocol) -> BaseCoordinator {
+        return MockBaseCoordinator(router: router, coordinatorFactory: coordinatorFactory, controllerFactory: controllerFactory)
+    }
+    
+    func makeCartCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, controllerFactory: ControllerFactoryProtocol) -> BaseCoordinator {
         return MockBaseCoordinator(router: router, coordinatorFactory: coordinatorFactory, controllerFactory: controllerFactory)
     }
 }
@@ -39,6 +47,18 @@ private final class MockCoordinatorFactory: CoordinatorFactoryProtocol {
 private final class MockControllerFactory: ControllerFactoryProtocol {
     
     var controller: UIViewController?
+    
+    func instantiateHomeController() -> HomeController? {
+        return instantiate() as? HomeController
+    }
+    
+    func instantiateCartController() -> CartController? {
+        return instantiate() as? CartController
+    }
+    
+    func instantiateDetailsController(model: ProductResponse?) -> DetailsController? {
+        return instantiate() as? DetailsController
+    }
     
     func instantiate() -> UIViewController? {
         controller = UIViewController()
@@ -51,7 +71,7 @@ final class HomeCoordinatorTests: BaseXCTest {
     
     // MARK: - Properties
     
-    private var sut: HomeCoordinator?
+    private var sut: BaseCoordinator?
     private var coordinatorFactory: MockCoordinatorFactory?
     private var controllerFactory: MockControllerFactory?
     
