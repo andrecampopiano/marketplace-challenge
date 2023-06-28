@@ -15,7 +15,8 @@ private class HomeManagerMock: HomeManagerProtocol {
         let file = FileRepresentation(withFileName: "product_list_success", fileExtension: .json, fileBundle: Bundle(for: MarketplaceChallengeTests.self))
         guard let data = file.data,
               let response = try? JSONDecoder().decode(ProductListResponse.self, from: data) else { return }
-        completion(.success(response))
+        let model = ProductResponseMapper.map(responses: response.products)
+        completion(.success(model))
     }
 }
 

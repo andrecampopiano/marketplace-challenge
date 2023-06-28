@@ -101,9 +101,9 @@ final class ProductDetailsView: UIView {
         backgroundColor = .neutralWhite
         setupContainerViewLayout()
         setupTitleLabelLayout()
-        setupOriginalPriceLabelLayout()
-        setupPriceLabelLayout()
         setupInstallmentsLabelLayout()
+        setupPriceLabelLayout()
+        setupOriginalPriceLabelLayout()
     }
     
     private func setupContainerViewLayout() {
@@ -116,8 +116,9 @@ final class ProductDetailsView: UIView {
     
     private func setupTitleLabelLayout() {
         containerView.addSubview(titleLabel)
+        titleLabel.anchor(height: .size(.small))
         titleLabel.anchor(top: containerView.safeTopAnchor,
-                          paddingTop: .spacing(.medium))
+                          paddingTop: .spacing(.extraSmall))
         titleLabel.anchor(left: containerView.safeLeftAnchor,
                           right: containerView.safeRightAnchor,
                           paddingLeft: .spacing(.small),
@@ -126,29 +127,31 @@ final class ProductDetailsView: UIView {
     
     private func setupOriginalPriceLabelLayout() {
         containerView.addSubview(originalPriceLabel)
+        originalPriceLabel.anchor(height: .size(.smaller))
         originalPriceLabel.anchor(top: titleLabel.safeBottomAnchor,
-                                  paddingTop: .spacing(.medium))
-        originalPriceLabel.anchor(left: containerView.safeLeftAnchor,
-                                  right: containerView.safeRightAnchor,
-                                  paddingLeft: .spacing(.medium),
-                                  paddingRight: .spacing(.medium))
+                                  bottom: priceLabel.safeTopAnchor,
+                                  paddingTop: .spacing(.medium),
+                                  paddingBottom: .spacing(.nano))
+        originalPriceLabel.anchor(left: installmentsLabel.safeLeftAnchor,
+                                  right: installmentsLabel.safeRightAnchor)
     }
     
     private func setupPriceLabelLayout() {
         containerView.addSubview(priceLabel)
-        priceLabel.anchor(left: originalPriceLabel.safeLeftAnchor,
-                          right: originalPriceLabel.safeRightAnchor)
-        priceLabel.anchor(top: originalPriceLabel.safeBottomAnchor,
-                          paddingTop: .spacing(.extraSmall))
+        priceLabel.anchor(height: .size(.smaller))
+        priceLabel.anchor(left: installmentsLabel.safeLeftAnchor,
+                          right: installmentsLabel.safeRightAnchor)
+        priceLabel.anchor(bottom: installmentsLabel.safeTopAnchor,
+                          paddingBottom: .spacing(.nano))
     }
     
     private func setupInstallmentsLabelLayout() {
         containerView.addSubview(installmentsLabel)
-        installmentsLabel.anchor(left: originalPriceLabel.safeLeftAnchor,
-                                 right: originalPriceLabel.safeRightAnchor)
-        installmentsLabel.anchor(top: priceLabel.safeBottomAnchor,
-                                 bottom: containerView.safeBottomAnchor,
-                                 paddingTop: .spacing(.extraSmall),
-                                 paddingBottom: .spacing(.extraSmall))
+        installmentsLabel.anchor(height: .size(.small))
+        installmentsLabel.anchor(left: containerView.safeLeftAnchor,
+                                 right: containerView.safeRightAnchor,
+                                 paddingLeft: .spacing(.medium),
+                                 paddingRight: .spacing(.medium))
+        installmentsLabel.anchor(bottom: containerView.safeBottomAnchor)
     }
 }

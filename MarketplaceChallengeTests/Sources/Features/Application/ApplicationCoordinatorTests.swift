@@ -32,7 +32,7 @@ private final class MockBaseCoordinator: BaseCoordinator {
 }
 
 private final class MockControllerFactoryProtocol: ControllerFactoryProtocol {
-    
+       
     var controller: UIViewController?
     
     func instantiateHomeController() -> HomeController? {
@@ -43,7 +43,7 @@ private final class MockControllerFactoryProtocol: ControllerFactoryProtocol {
         return instantiate() as? CartController
     }
     
-    func instantiateDetailsController(model: ProductResponse?) -> DetailsController? {
+    func instantiateDetailsController(model: ProductModel?) -> DetailsController? {
         return instantiate() as? DetailsController
     }
     

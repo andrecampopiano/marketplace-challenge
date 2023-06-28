@@ -9,14 +9,16 @@ import CoreSwift
 import SVGKit
 import UIKit
 
-typealias ShowDetailsFlow = (_ model: ProductResponse?) -> Void
+typealias ShowDetailsFlow = (_ model: ProductModel?) -> Void
 
 final class DetailsController: UIViewController {
     
     // MARK: - Constants
     
     private enum Constants {
-        static let primaryButtonName: String = LocalizableBundle.homeItemViewPrimaryButtonName.localize
+        static let primaryButtonName: String = LocalizableBundle.buttonBuyFooterViewPrimaryButtonName.localize
+        static let secoundaryButtonName: String = LocalizableBundle.buttonBuyFooterViewSecoundaryButtonName.localize
+        static let sizeTitle: String = LocalizableBundle.detailsControllerSizeTitle.localize
         static let containerFooterViewHeight: CGFloat = 230
         static let mainImageNameDefault: String = "icon_market"
     }
@@ -39,11 +41,19 @@ final class DetailsController: UIViewController {
         let imageView = UIImageView()
         let image = SVGKImage(named: Constants.mainImageNameDefault)
         imageView.image = image?.uiImage
-        imageView.image = UIImage(named: "icon_market")
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .neutralWhite
         imageView.accessibilityIdentifier = HomeItemViewIdentifiers.mainImageView.rawValue
         return imageView
+    }()
+    
+    private lazy var sizeTitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: .bold, size: .medium)
+        label.textColor = .neutralBlack
+        label.text = Constants.sizeTitle
+        label.textAlignment = .center
+        return label
     }()
     
     private lazy var sizeView: SizeComponentView = {
@@ -66,7 +76,8 @@ final class DetailsController: UIViewController {
     }()
     
     private lazy var footerView: ButtonBuyFooterView = {
-        let footerView = ButtonBuyFooterView.instantiate()
+        let footerView = ButtonBuyFooterView.instantiate(primaryButtonName: Constants.primaryButtonName,
+                                                         secoundaryButtonName: Constants.secoundaryButtonName)
         footerView.delegate = self
         return footerView
     }()
@@ -121,6 +132,7 @@ final class DetailsController: UIViewController {
         setupFooterViewLayout()
         setupProductDetailsViewLayout()
         setupSizeViewLayout()
+        setupSizeTitleLabelLayout()
         setupMainImageViewLayout()
     }
     
@@ -128,19 +140,25 @@ final class DetailsController: UIViewController {
         view.addSubview(containerFooterView)
         containerFooterView.anchor(left: view.safeLeftAnchor, right: view.safeRightAnchor)
         containerFooterView.anchor(bottom: view.bottomAnchor)
-        containerFooterView.anchor(height: Constants.containerFooterViewHeight)
     }
     
     private func setupMainImageViewLayout() {
         view.addSubview(mainImageView)
         mainImageView.anchor(top: view.safeTopAnchor,
-                             bottom: sizeView.safeTopAnchor,
-                             paddingTop: .spacing(.medium),
-                             paddingBottom: .spacing(.medium))
+                             bottom: sizeTitleLabel.safeTopAnchor,
+                             paddingBottom: .spacing(.extraSmall))
         mainImageView.anchor(left: view.safeLeftAnchor,
                              right: view.safeRightAnchor,
                              paddingLeft: .spacing(.medium),
                              paddingRight: .spacing(.medium))
+    }
+    
+    private func setupSizeTitleLabelLayout() {
+        view.addSubview(sizeTitleLabel)
+        sizeTitleLabel.anchor(bottom: sizeView.safeTopAnchor,
+                              paddingBottom: .spacing(.nano))
+        sizeTitleLabel.anchor(height: .size(.medium))
+        sizeTitleLabel.anchor(horizontal: view.centerXAnchor)
     }
     
     private func setupSizeViewLayout() {

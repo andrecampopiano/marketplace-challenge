@@ -8,7 +8,7 @@
 import CoreSwift
 import Foundation
 
-typealias ProductListGetCompletion = (Result<ProductListResponse, Error>) -> Void
+typealias ProductListGetCompletion = (Result<[ProductModel]?, Error>) -> Void
 
 protocol HomeBusinessProtocol {
     func handlerProductListGetCompletion(result: NetworkingResponse, completion: @escaping ProductListGetCompletion)
@@ -28,7 +28,8 @@ struct HomeBusiness: HomeBusinessProtocol {
             guard let response = try result().data else {
                 return completion(.failure(BaseError.parse(Constants.parseErrorDescription)))
             }
-            let model = try JSONDecoder().decode(ProductListResponse.self, from: response)
+            let responseModel = try JSONDecoder().decode(ProductListResponse.self, from: response)
+            let model = ProductResponseMapper.map(responses: responseModel.products)
             completion(.success(model))
         } catch {
             completion(.failure(error))

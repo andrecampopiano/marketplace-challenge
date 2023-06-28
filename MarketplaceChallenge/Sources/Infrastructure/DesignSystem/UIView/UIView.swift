@@ -23,9 +23,9 @@ extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
         guard let superview = superview else { return }
         topAnchor.constraint(equalTo: superview.safeTopAnchor, constant: padding).isActive = true
-        bottomAnchor.constraint(equalTo: superview.safeBottomAnchor, constant: padding).isActive = true
+        bottomAnchor.constraint(equalTo: superview.safeBottomAnchor, constant: -padding).isActive = true
         leftAnchor.constraint(equalTo: superview.safeLeftAnchor, constant: padding).isActive = true
-        rightAnchor.constraint(equalTo: superview.safeRightAnchor, constant: padding).isActive = true
+        rightAnchor.constraint(equalTo: superview.safeRightAnchor, constant: -padding).isActive = true
     }
     
     func anchorWidth(greaterThanOrEqualToConstant size: CGFloat, horizontalParent: UIView, maxPadding: CGFloat) {

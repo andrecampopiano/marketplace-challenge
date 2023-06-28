@@ -9,13 +9,13 @@ import CoreSwift
 import Foundation
 
 protocol ProductDetailsViewModelProtocol {
-    var model: Dynamic<ProductResponse?> { get }
+    var model: Dynamic<ProductModel?> { get }
 }
 
 final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
-    var model = Dynamic<ProductResponse?>(nil)
+    var model = Dynamic<ProductModel?>(nil)
     
-    init(model: ProductResponse?) {
+    init(model: ProductModel?) {
         self.model.value = model
     }
 }

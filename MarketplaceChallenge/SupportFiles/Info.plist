@@ -4,6 +4,8 @@
 <dict>
 	<key>App Environment</key>
 	<string>${APP_ENVIRONMENT}</string>
+	<key>Core Data Model Name</key>
+	<string>E-commerceModel</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -11,5 +13,7 @@
 	</dict>
 	<key>Server Url</key>
 	<string>${SERVER_URL}</string>
+	<key>Url Path Store</key>
+	<string>e-commerce.sqlite</string>
 </dict>
 </plist>

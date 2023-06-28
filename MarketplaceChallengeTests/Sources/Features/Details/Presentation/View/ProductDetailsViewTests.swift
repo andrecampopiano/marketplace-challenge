@@ -11,13 +11,13 @@ import iOSSnapshotTestCase
 import XCTest
 
 private final class MockProductDetailsViewModel: ProductDetailsViewModelProtocol {
-    var model = Dynamic<ProductResponse?>(nil)
+    var model = Dynamic<ProductModel?>(nil)
     
     init() {
         let file = FileRepresentation(withFileName: "product_item", fileExtension: .json, fileBundle: Bundle(for: MarketplaceChallengeTests.self))
         guard let data = file.data,
               let response = try? JSONDecoder().decode(ProductResponse.self, from: data) else { return }
-        self.model.value = response
+        self.model.value = ProductResponseMapper.map(response: response)
     }
 }
 
@@ -64,7 +64,7 @@ final class ProductDetailsViewTests: BaseXCTest, Elements {
     // MARK: - Private Methods
     
     private func makeSut() {
-        let frame = CGRect(x: .zero, y: .zero, width: 320, height: 140)
+        let frame = CGRect(x: .zero, y: .zero, width: 320, height: 100)
         let viewModel = MockProductDetailsViewModel()
         sut = ProductDetailsView(frame: frame)
         sut?.setup(viewModel: viewModel)

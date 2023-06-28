@@ -12,13 +12,14 @@ import XCTest
 
 private class MockHomeItemViewModel: HomeItemViewModelProtocol {
     
-    var model = Dynamic<ProductResponse?>(nil)
+    var model = Dynamic<ProductModel?>(nil)
     
     init() {
         let file = FileRepresentation(withFileName: "product_item", fileExtension: .json, fileBundle: Bundle(for: MarketplaceChallengeTests.self))
         guard let data = file.data,
               let response = try? JSONDecoder().decode(ProductResponse.self, from: data) else { return }
-        model.value = response
+        
+        model.value = ProductResponseMapper.map(response: response)
     }
 }
 

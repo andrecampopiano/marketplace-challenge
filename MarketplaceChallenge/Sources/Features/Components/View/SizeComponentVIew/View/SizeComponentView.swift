@@ -8,28 +8,6 @@
 import CoreSwift
 import UIKit
 
-protocol SizeComponentViewModelProtocol {
-    var model: [ProductSizeResponse]? { get }
-    
-    func updateSelectedItem(position: Int)
-}
-
-final class SizeComponentViewModel: SizeComponentViewModelProtocol {
-    
-    var model: [ProductSizeResponse]?
-    var itemSelected: ProductSizeResponse?
-    
-    init(model: [ProductSizeResponse]?) {
-        self.model = model
-    }
-    
-    // MARK: - Public Methods
-    
-    func updateSelectedItem(position: Int) {
-        itemSelected = model?[position]
-    }
-}
-
 final class SizeComponentView: UIView {
     
     // MARK: - Properties

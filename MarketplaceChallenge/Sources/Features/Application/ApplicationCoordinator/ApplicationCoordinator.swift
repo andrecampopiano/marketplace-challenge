@@ -18,7 +18,7 @@ class ApplicationCoordinator: BaseCoordinator {
     
     // MARK: - Initialize
     
-    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, controllerFactory: ControllerFactoryProtocol = ControllerFactory()) {
+    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, controllerFactory: ControllerFactoryProtocol = ControllerFactory(cartViewModel: CartViewModel())) {
         self.router = router
         self.coordinatorFactory = coordinatorFactory
         self.controllerFactory = controllerFactory

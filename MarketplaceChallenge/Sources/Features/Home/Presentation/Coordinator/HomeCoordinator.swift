@@ -37,11 +37,17 @@ class HomeCoordinator: BaseCoordinator {
     private func showHomeViewController() {
         let viewController = self.controllerFactory.instantiateHomeController()
         viewController?.showDetailsFlow = showDetailsFlow
+        viewController?.showCartFlow = showCartFlow
         self.router.setRootViewController(viewController)
     }
     
-    private func showDetailsFlow(_ model: ProductResponse?) {
+    private func showDetailsFlow(_ model: ProductModel?) {
         let controller = controllerFactory.instantiateDetailsController(model: model)
         self.router.push(controller)
+    }
+    
+    private func showCartFlow() {
+        let controller = controllerFactory.instantiateCartController()
+        self.router.present(controller)
     }
 }

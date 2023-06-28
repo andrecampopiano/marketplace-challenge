@@ -10,5 +10,5 @@ import UIKit
 protocol ControllerFactoryProtocol {
     func instantiateHomeController() -> HomeController?
     func instantiateCartController() -> CartController?
-    func instantiateDetailsController(model: ProductResponse?) -> DetailsController? 
+    func instantiateDetailsController(model: ProductModel?) -> DetailsController? 
 }

@@ -53,8 +53,8 @@ class HomeViewModel: HomeViewModelProtocol {
     
     // MARK: - Private Methods
     
-    private func handlerSuccess(model: ProductListResponse) {
-        setupItemViewModel(products: model.products)
+    private func handlerSuccess(model: [ProductModel]?) {
+        setupItemViewModel(products: model)
         self.status.value = .loaded
     }
     
@@ -62,7 +62,7 @@ class HomeViewModel: HomeViewModelProtocol {
         self.status.value = .error
     }
     
-    private func setupItemViewModel(products: [ProductResponse]?) {
+    private func setupItemViewModel(products: [ProductModel]?) {
         self.itemsViewModel = []
         guard let products = products else { return }
         for item in products {

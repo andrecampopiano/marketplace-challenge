@@ -21,13 +21,6 @@ protocol ButtonBuyFooterViewDelegate: AnyObject {
 
 final class ButtonBuyFooterView: UIView {
     
-    // MARK: - Constants
-    
-    private enum Constants {
-        static let primaryButtonName: String = LocalizableBundle.buttonBuyFooterViewPrimaryButtonName.localize
-        static let secoundaryButtonName: String = LocalizableBundle.buttonBuyFooterViewSecoundaryButtonName.localize
-    }
-    
     // MARK: - Properties
     
     weak var delegate: ButtonBuyFooterViewDelegate?
@@ -46,7 +39,6 @@ final class ButtonBuyFooterView: UIView {
         let button = UIButton()
         button.cornerRadius = .spacing(.small)
         button.backgroundColor = .neutralBlack
-        button.setTitle(Constants.primaryButtonName, for: .normal)
         button.titleLabel?.font = UIFont(name: .medium, size: .minimum)
         button.addTarget(self, action: #selector(clickPrimaryButton), for: .touchUpInside)
         button.accessibilityIdentifier = ButtonBuyFooterViewIdentifiers.primaryButton.rawValue
@@ -61,7 +53,6 @@ final class ButtonBuyFooterView: UIView {
         button.setTitleColor(.neutralBlack, for: .normal)
         button.borderColor = .neutralBlack
         button.borderWidth = 1
-        button.setTitle(Constants.secoundaryButtonName, for: .normal)
         button.titleLabel?.font = UIFont(name: .medium, size: .minimum)
         button.addTarget(self, action: #selector(clickSecondaryButton), for: .touchUpInside)
         button.accessibilityIdentifier = ButtonBuyFooterViewIdentifiers.secoundaryButton.rawValue
@@ -70,8 +61,10 @@ final class ButtonBuyFooterView: UIView {
     
     // MARK: - Instantiate
     
-    static func instantiate(frame: CGRect = .zero) -> ButtonBuyFooterView {
+    static func instantiate(frame: CGRect = .zero, primaryButtonName: String?, secoundaryButtonName: String?) -> ButtonBuyFooterView {
         let view = ButtonBuyFooterView(frame: frame)
+        view.primaryButton.setTitle(primaryButtonName, for: .normal)
+        view.secondaryButton.setTitle(secoundaryButtonName, for: .normal)
         view.setup()
         return view
     }
@@ -86,7 +79,9 @@ final class ButtonBuyFooterView: UIView {
         backgroundColor = .neutralLightGrey
         setupContainerViewLayout()
         setupPrimaryButtonLayout()
-        setupSecondaryButtonLayout()
+        if secondaryButton.titleLabel?.text != nil {
+            setupSecondaryButtonLayout()
+        }
     }
     
     private func setupContainerViewLayout() {

@@ -17,3 +17,12 @@
 "buttonBuyFooterViewPrimaryButtonName" = "Adicionar ao Carrinho";
 "buttonBuyFooterViewSecoundaryButtonName" = "Comprar";
 
+// MARK: - DetailController
+
+"detailsControllerSizeTitle" = "Selecione um Tamanho:";
+
+// MARK: - CartController
+
+"cartControllerTitle" = "Meu Carrinho";
+"cartControllerPrimaryButtonName" = "Finaliar Compra";
+

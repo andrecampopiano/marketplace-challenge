@@ -19,6 +19,10 @@ enum HomeItemViewIdentifiers: String {
     case installmentsLabel = "homeItemView_installmentsLabel_id"
 }
 
+protocol HomeItemViewDelegate: AnyObject {
+    func clickPrimaryButton(cell: HomeItemView)
+}
+
 final class HomeItemView: UITableViewCell {
     
     // MARK: - Constants
@@ -33,6 +37,7 @@ final class HomeItemView: UITableViewCell {
     // MARK: - Properties
     
     private var viewModel: HomeItemViewModelProtocol?
+    private weak var delegate: HomeItemViewDelegate?
     
     private lazy var containerView: UIView = {
         let view = UIView()
@@ -54,6 +59,9 @@ final class HomeItemView: UITableViewCell {
     
     private lazy var mainImageView: UIImageView = {
         let imageView = UIImageView()
+        let image = SVGKImage(named: Constants.mainImageNameDefault)
+        imageView.image = image?.uiImage
+        imageView.contentMode = .scaleAspectFill
         imageView.borderColor = .neutralDarkGrey
         imageView.borderWidth = 1
         imageView.cornerRadius = .size(.nano)
@@ -68,6 +76,7 @@ final class HomeItemView: UITableViewCell {
         button.setTitle(Constants.primaryButtonName, for: .normal)
         button.titleLabel?.font = UIFont(name: .bold, size: .small)
         button.accessibilityIdentifier = HomeItemViewIdentifiers.primaryButton.rawValue
+        button.addTarget(self, action: #selector(clickPrimaryButton), for: .touchUpInside)
         return button
     }()
     
@@ -113,8 +122,9 @@ final class HomeItemView: UITableViewCell {
     
     // MARK: - Public Methods
     
-    func setup(viewModel: HomeItemViewModelProtocol) {
+    func setup(viewModel: HomeItemViewModelProtocol, delegate: HomeItemViewDelegate?) {
         self.viewModel = viewModel
+        self.delegate = delegate
         bindElements()
         setupLayout()
     }
@@ -145,6 +155,7 @@ final class HomeItemView: UITableViewCell {
     }
 
     private func setupLayout() {
+        contentView.isUserInteractionEnabled = true
         backgroundColor = .neutralLightGrey
         selectionStyle = .none
         setupContainerViewLayout()
@@ -213,5 +224,10 @@ final class HomeItemView: UITableViewCell {
         containerView.addSubview(originalPriceLabel)
         originalPriceLabel.anchor(bottom: priceLabel.safeTopAnchor, paddingBottom: .spacing(.nano))
         originalPriceLabel.anchor(left: primaryButton.safeLeftAnchor, right: titleLabel.safeRightAnchor)
+    }
+    
+    @objc
+    private func clickPrimaryButton() {
+        delegate?.clickPrimaryButton(cell: self)
     }
 }

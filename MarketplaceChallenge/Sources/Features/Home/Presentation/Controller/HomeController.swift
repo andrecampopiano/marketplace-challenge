@@ -20,6 +20,7 @@ class HomeController: UIViewController {
 
     var viewModel: HomeViewModelProtocol?
     var showDetailsFlow: ShowDetailsFlow?
+    var showCartFlow: ShowCartFlow?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -71,7 +72,15 @@ class HomeController: UIViewController {
     private func setupLayout() {
         view.backgroundColor = .neutralLightGrey
         title = Constants.navigationTitle
+        setupCartButtonLayout()
         setupTableViewLayout()
+    }
+    
+    private func setupCartButtonLayout() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_cart"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(cartButtonTapped))
     }
     
     private func setupTableViewLayout() {
@@ -79,6 +88,11 @@ class HomeController: UIViewController {
         tableView.anchor(left: view.safeLeftAnchor,
                          right: view.safeRightAnchor)
         tableView.anchor(top: view.safeTopAnchor, bottom: view.safeBottomAnchor)
+    }
+    
+    @objc
+    private func cartButtonTapped() {
+        showCartFlow?()
     }
 }
 
@@ -90,7 +104,7 @@ extension HomeController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let itemViewModel = viewModel?.getItemViewModel(row: indexPath.row) else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(HomeItemView.self, for: indexPath)
-        cell.setup(viewModel: itemViewModel)
+        cell.setup(viewModel: itemViewModel, delegate: self)
         return cell
     }
 }
@@ -103,8 +117,11 @@ extension HomeController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+}
+
+extension HomeController: HomeItemViewDelegate {
+    func clickPrimaryButton(cell: HomeItemView) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
         let productItemModel = self.viewModel?.itemsViewModel?[indexPath.row].model.value
         self.showDetailsFlow?(productItemModel)
     }

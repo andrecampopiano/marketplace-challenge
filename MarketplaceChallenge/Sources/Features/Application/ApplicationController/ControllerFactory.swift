@@ -9,9 +9,16 @@ import CoreSwift
 import UIKit
 
 class ControllerFactory: ControllerFactoryProtocol {
+    
+    private var cartViewModel: CartViewModelProtocol?
+    
+    init(cartViewModel: CartViewModelProtocol?) {
+        self.cartViewModel = cartViewModel
+    }
+    
     func instantiateCartController() -> CartController? {
         let controller = CartController.instantiate()
-        controller.viewModel = CartViewModel()
+        controller.viewModel = cartViewModel
         return controller
     }
     
@@ -21,7 +28,7 @@ class ControllerFactory: ControllerFactoryProtocol {
         return controller
     }
     
-    func instantiateDetailsController(model: ProductResponse?) -> DetailsController? {
+    func instantiateDetailsController(model: ProductModel?) -> DetailsController? {
         let controller = DetailsController.instantiate()
         controller.viewModel = DetailsControllerViewModel(model: model)
         

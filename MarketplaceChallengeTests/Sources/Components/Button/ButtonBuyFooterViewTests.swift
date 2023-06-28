@@ -47,7 +47,9 @@ final class ButtonBuyFooterViewTests: BaseXCTest, Elements {
     
     private func makeSut() {
         let frame = CGRect(x: .zero, y: .zero, width: 320, height: .spacing(.large))
-        sut = ButtonBuyFooterView.instantiate(frame: frame)
+        sut = ButtonBuyFooterView.instantiate(frame: frame,
+                                              primaryButtonName: "Adicionar ao Carrinho",
+                                              secoundaryButtonName: "Comprar")
         sut?.layoutIfNeeded()
         setupElements()
     }

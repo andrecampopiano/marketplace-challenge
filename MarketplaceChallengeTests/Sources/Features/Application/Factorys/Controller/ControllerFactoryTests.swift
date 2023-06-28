@@ -26,6 +26,7 @@ final class ControllerFactoryTests: BaseXCTest {
     // MARK: - Private Methods
     
     private func makeSut() {
-        sut = ControllerFactory()
+        let viewModel = CartViewModel()
+        sut = ControllerFactory(cartViewModel: viewModel)
     }
 }

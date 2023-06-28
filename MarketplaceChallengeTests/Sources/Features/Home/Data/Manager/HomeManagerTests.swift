@@ -41,21 +41,18 @@ final class HomeManagerTests: XCTestCase {
     
     // MARK: - Private Methods
     
-    private func assetsProductList(model: ProductListResponse) {
+    private func assetsProductList(model: [ProductModel]?) {
+        guard let model = model else { return }
         XCTAssertNotNil(model)
-        XCTAssertEqual(model.products?.count, 5)
-        assetFirstProduct(model: model.products?[0])
-        assetSecoundProduct(model: model.products?[1])
-        assetThirdProduct(model: model.products?[2])
-        assetFourthProduct(model: model.products?[3])
+        XCTAssertEqual(model.count, 5)
+        assetFirstProduct(model: model[0])
+        assetSecoundProduct(model: model[1])
+        assetThirdProduct(model: model[2])
+        assetFourthProduct(model: model[3])
     }
     
-    private func assetFirstProduct(model: ProductResponse?) {
+    private func assetFirstProduct(model: ProductModel?) {
         XCTAssertEqual(model?.name, "VESTIDO TRANSPASSE BOW")
-        XCTAssertEqual(model?.style, "20002605")
-        XCTAssertEqual(model?.codeColor, "20002605_613")
-        XCTAssertEqual(model?.colorSlug, "tapecaria")
-        XCTAssertEqual(model?.color, "TAPEÇARIA")
         XCTAssertEqual(model?.onSale, false)
         XCTAssertEqual(model?.regularPrice, "R$ 199,90")
         XCTAssertEqual(model?.actualPrice, "R$ 199,90")
@@ -81,12 +78,8 @@ final class HomeManagerTests: XCTestCase {
         XCTAssertEqual(model?.sizes?[4].sku, "5807_343_0_GG")
     }
     
-    private func assetSecoundProduct(model: ProductResponse?) {
+    private func assetSecoundProduct(model: ProductModel?) {
         XCTAssertEqual(model?.name, "REGATA ALCINHA FOLK")
-        XCTAssertEqual(model?.style, "20002570")
-        XCTAssertEqual(model?.codeColor, "20002570_614")
-        XCTAssertEqual(model?.colorSlug, "preto")
-        XCTAssertEqual(model?.color, "PRETO")
         XCTAssertEqual(model?.onSale, false)
         XCTAssertEqual(model?.regularPrice, "R$ 99,90")
         XCTAssertEqual(model?.actualPrice, "R$ 99,90")
@@ -112,12 +105,8 @@ final class HomeManagerTests: XCTestCase {
         XCTAssertEqual(model?.sizes?[4].sku, "5723_40130843_0_GG")
     }
     
-    private func assetThirdProduct(model: ProductResponse?) {
+    private func assetThirdProduct(model: ProductModel?) {
         XCTAssertEqual(model?.name, "TOP CROPPED SUEDE")
-        XCTAssertEqual(model?.style, "20002575")
-        XCTAssertEqual(model?.codeColor, "20002575_035")
-        XCTAssertEqual(model?.colorSlug, "caramelo")
-        XCTAssertEqual(model?.color, "CARAMELO")
         XCTAssertEqual(model?.onSale, false)
         XCTAssertEqual(model?.regularPrice, "R$ 129,90")
         XCTAssertEqual(model?.actualPrice, "R$ 129,90")
@@ -142,12 +131,8 @@ final class HomeManagerTests: XCTestCase {
         XCTAssertEqual(model?.sizes?[4].sku, "5733_1000054_0_GG")
     }
     
-    private func assetFourthProduct(model: ProductResponse?) {
+    private func assetFourthProduct(model: ProductModel?) {
         XCTAssertEqual(model?.name, "BATA DECOTE FLUID")
-        XCTAssertEqual(model?.style, "20002581")
-        XCTAssertEqual(model?.codeColor, "20002581_614")
-        XCTAssertEqual(model?.colorSlug, "mini-folk")
-        XCTAssertEqual(model?.color, "MINI FOLK")
         XCTAssertEqual(model?.onSale, false)
         XCTAssertEqual(model?.regularPrice, "R$ 149,90")
         XCTAssertEqual(model?.actualPrice, "R$ 149,90")

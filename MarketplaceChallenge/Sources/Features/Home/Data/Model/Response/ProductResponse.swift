@@ -7,24 +7,20 @@
 
 import Foundation
 
-struct ProductListResponse: Decodable {
-    var products: [ProductResponse]?
-}
-
 struct ProductSizeResponse: Decodable {
     var available: Bool?
     var size: String?
     var sku: String?
+    var quantity: Int?
+}
+
+struct ProductListResponse: Decodable {
+    var products: [ProductResponse]?
 }
 
 struct ProductResponse: Decodable {
-    
     enum CodingKeys: String, CodingKey {
         case name
-        case style
-        case codeColor = "code_color"
-        case colorSlug = "color_slug"
-        case color
         case onSale = "on_sale"
         case regularPrice = "regular_price"
         case actualPrice = "actual_price"
@@ -35,10 +31,6 @@ struct ProductResponse: Decodable {
     }
     
     var name: String?
-    var style: String?
-    var codeColor: String?
-    var colorSlug: String?
-    var color: String?
     var onSale: Bool?
     var regularPrice: String?
     var actualPrice: String?

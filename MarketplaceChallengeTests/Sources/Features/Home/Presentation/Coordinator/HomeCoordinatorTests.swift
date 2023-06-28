@@ -56,7 +56,7 @@ private final class MockControllerFactory: ControllerFactoryProtocol {
         return instantiate() as? CartController
     }
     
-    func instantiateDetailsController(model: ProductResponse?) -> DetailsController? {
+    func instantiateDetailsController(model: ProductModel?) -> DetailsController? {
         return instantiate() as? DetailsController
     }
     

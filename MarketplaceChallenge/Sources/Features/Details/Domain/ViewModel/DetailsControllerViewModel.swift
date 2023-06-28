@@ -8,7 +8,7 @@
 import CoreSwift
 
 protocol DetailsControllerViewModelProtocol {
-    var model: Dynamic<ProductResponse?> { get }
+    var model: Dynamic<ProductModel?> { get }
     var productDetailsViewModel: ProductDetailsViewModelProtocol? { get }
     var sizeViewModel: SizeComponentViewModel? { get }
 
@@ -17,11 +17,11 @@ protocol DetailsControllerViewModelProtocol {
 
 final class DetailsControllerViewModel: DetailsControllerViewModelProtocol {
     
-    var model = Dynamic<ProductResponse?>(nil)
+    var model = Dynamic<ProductModel?>(nil)
     var sizeViewModel: SizeComponentViewModel?
     var productDetailsViewModel: ProductDetailsViewModelProtocol?
     
-    init(model: ProductResponse?) {
+    init(model: ProductModel?) {
         self.model.value = model
         self.productDetailsViewModel = ProductDetailsViewModel(model: model)
         self.sizeViewModel = SizeComponentViewModel(model: model?.sizes)

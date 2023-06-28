@@ -21,6 +21,13 @@ final class SizeComponentItemView: UICollectionViewCell {
         return label
     }()
     
+    override var isSelected: Bool {
+        didSet {
+            self.backgroundColor = isSelected ? .neutralBlack : .white
+            titleLabel.textColor = isSelected ? .white : .neutralBlack
+        }
+    }
+    
     // MARK: - Public Methods
     
     func setup(title: String?) {

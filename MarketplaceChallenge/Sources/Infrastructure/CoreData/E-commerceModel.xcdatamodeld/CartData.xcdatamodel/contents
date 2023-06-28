@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ManagedCart" representedClassName="ManagerCartProduct" syncable="YES">
+        <relationship name="cache" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedCartCache" inverseName="carts" inverseEntity="ManagedCartCache"/>
+        <relationship name="productVariant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedCartProductVariant"/>
+    </entity>
+    <entity name="ManagedCartCache" representedClassName="ManagedCartCache" syncable="YES">
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="carts" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="ManagedCart" inverseName="cache" inverseEntity="ManagedCart"/>
+    </entity>
+    <entity name="ManagedCartProduct" representedClassName="ManagedCartProduct" isAbstract="YES" syncable="YES">
+        <attribute name="actualPrice" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="data" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="installmentsPrice" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="installmentsQuantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="regularPrice" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="product" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ManagedCartProductVariant"/>
+    </entity>
+    <entity name="ManagedCartProductVariant" representedClassName="ManagedCartProductVariant" syncable="YES">
+        <attribute name="avaliable" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sku" optional="YES" attributeType="String"/>
+        <relationship name="cartProduct" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedCart"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedCartProduct"/>
+    </entity>
+    <entity name="ManagedProduct" representedClassName="ManagedProduct" syncable="YES">
+        <attribute name="actualPrice" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="installmentsAmount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="installmentsPrice" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="onSale" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="regularPrice" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="style" optional="YES" attributeType="String"/>
+        <relationship name="size" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ManagedProductSize"/>
+    </entity>
+    <entity name="ManagedProductSize" representedClassName="ManagedProductSize" syncable="YES">
+        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+</model>

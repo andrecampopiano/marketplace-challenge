@@ -9,18 +9,18 @@ import CoreSwift
 import Foundation
 
 protocol HomeItemViewModelProtocol {
-    var model: Dynamic<ProductResponse?> { get }
+    var model: Dynamic<ProductModel?> { get }
 }
 
 final class HomeItemViewModel: HomeItemViewModelProtocol {
     
     // MARK: - Properties
     
-    var model = Dynamic<ProductResponse?>(nil)
+    var model = Dynamic<ProductModel?>(nil)
     
     // MARK: - Initialize
     
-    init(model: ProductResponse) {
+    init(model: ProductModel) {
         self.model.value = model
     }
 }

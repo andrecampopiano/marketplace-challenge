@@ -21,6 +21,15 @@ enum LocalizableBundle: String {
     case buttonBuyFooterViewPrimaryButtonName
     case buttonBuyFooterViewSecoundaryButtonName
     
+    // MARK: - DetailsController
+    
+    case detailsControllerSizeTitle
+    
+    // MARK: - CartController
+    
+    case cartControllerTitle
+    case cartControllerPrimaryButtonName
+    
     var localize: String {
         return rawValue.localize(bundle: .main)
     }
