@@ -23,18 +23,4 @@ class DetailsCoordinator: BaseCoordinator {
         self.coordinatorFactory = coordinatorFactory
         self.controllerFactory = controllerFactory
     }
-    
-    // MARK: - Override Methods
-    
-    func start(model: ProductModel?) {
-        super.start()
-        showDetailsController(model: model)
-    }
-    
-    // MARK: - Private Methods
-    
-    private func showDetailsController(model: ProductModel?) {
-        let controller = controllerFactory.instantiateDetailsController(model: model)
-        self.router.push(controller)
-    }
 }

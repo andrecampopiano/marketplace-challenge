@@ -58,12 +58,16 @@ final class SizeComponentView: UIView {
     private func bindElements() {
         viewModel?.model.bind { [weak self] _ in
             guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-                self.collectionView.selectItem(at: IndexPath(row: .zero, section: .zero),
-                                               animated: false,
-                                               scrollPosition: .top)
-            }
+            self.updateItemSelected()
+        }
+    }
+    
+    private func updateItemSelected() {
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: .zero, section: .zero)
+            self.collectionView.reloadData()
+            self.viewModel?.updateSelectedItem(position: indexPath.row)
+            self.collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
         }
     }
     

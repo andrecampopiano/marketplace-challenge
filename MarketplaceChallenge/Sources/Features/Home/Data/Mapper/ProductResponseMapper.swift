@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProductResponseMapper {
+enum ProductResponseMapper {
     
     static func map(sizeResponse: ProductSizeResponse?) -> ProductSizeModel {
         return ProductSizeModel(available: sizeResponse?.available,

@@ -43,11 +43,26 @@ class HomeCoordinator: BaseCoordinator {
     
     private func showDetailsFlow(_ model: ProductModel?) {
         let controller = controllerFactory.instantiateDetailsController(model: model)
+        controller?.showCartFlow = showCartFlow
+        controller?.showCartFlowWithNewItem = showCartFlowWithNewItem
+        controller?.addItemToCart = addItemToCart
         self.router.push(controller)
     }
     
     private func showCartFlow() {
         let controller = controllerFactory.instantiateCartController()
         self.router.present(controller)
+    }
+    
+    private func showCartFlowWithNewItem(_ item: CartModel?) {
+        let controller = controllerFactory.instantiateCartController()
+        let viewModel = controller?.viewModel
+        viewModel?.addItem(cart: item)
+        self.router.present(controller)
+    }
+    
+    private func addItemToCart(_ item: CartModel?) {
+        let viewModel = controllerFactory.instantiateCartController()?.viewModel
+        viewModel?.addItem(cart: item)
     }
 }

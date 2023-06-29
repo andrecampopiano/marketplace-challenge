@@ -10,9 +10,9 @@ import Foundation
 struct LocalCartProductModel: Equatable {
     let image: String?
     let name: String?
-    let actualPrice: Float?
-    let regularPrice: Float?
-    let installmentsPrice: Float?
+    let actualPrice: Double?
+    let regularPrice: Double?
+    let installmentsPrice: Double?
     let installmentsQuantity: Int?
 }
 

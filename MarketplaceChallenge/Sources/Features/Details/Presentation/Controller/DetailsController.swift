@@ -19,13 +19,16 @@ final class DetailsController: UIViewController {
         static let primaryButtonName: String = LocalizableBundle.buttonBuyFooterViewPrimaryButtonName.localize
         static let secoundaryButtonName: String = LocalizableBundle.buttonBuyFooterViewSecoundaryButtonName.localize
         static let sizeTitle: String = LocalizableBundle.detailsControllerSizeTitle.localize
-        static let containerFooterViewHeight: CGFloat = 230
         static let mainImageNameDefault: String = "icon_market"
+        static let cartButtonIconName: String = "icon_cart"
     }
     
     // MARK: - Properties
     
     var viewModel: DetailsControllerViewModelProtocol?
+    var showCartFlowWithNewItem: ShowCartFlowWithNewItem?
+    var addItemToCart: AddItemToCart?
+    var showCartFlow: ShowCartFlow?
     
     private var collectionViewWidth: CGFloat {
         CGFloat(self.viewModel?.model.value?.sizes?.count ?? 1) * .spacing(.large)
@@ -128,12 +131,20 @@ final class DetailsController: UIViewController {
     
     private func setupLayout() {
         view.backgroundColor = .neutralWhite
+        setupCartButtonLayout()
         setupContainerFooterViewLayout()
         setupFooterViewLayout()
         setupProductDetailsViewLayout()
         setupSizeViewLayout()
         setupSizeTitleLabelLayout()
         setupMainImageViewLayout()
+    }
+    
+    private func setupCartButtonLayout() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: Constants.cartButtonIconName),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(cartButtonTapped))
     }
     
     private func setupContainerFooterViewLayout() {
@@ -183,12 +194,21 @@ final class DetailsController: UIViewController {
                           right: containerFooterView.safeRightAnchor)
         footerView.anchor(height: .size(.xLarge))
     }
+    
+    @objc
+    private func cartButtonTapped() {
+        showCartFlow?()
+    }
 }
 
 extension DetailsController: ButtonBuyFooterViewDelegate {
     func clickPrimaryButton() {
-        viewModel?.addToCart()
+        let cartModel = viewModel?.addToCart()
+        addItemToCart?(cartModel)
     }
     
-    func clickSecondaryButton() { }
+    func clickSecondaryButton() {
+        let cartModel = viewModel?.addToCart()
+        showCartFlowWithNewItem?(cartModel)
+    }
 }

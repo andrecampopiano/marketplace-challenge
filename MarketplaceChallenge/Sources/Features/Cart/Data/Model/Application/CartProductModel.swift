@@ -8,22 +8,21 @@
 import Foundation
 
 struct CartProductModel: Hashable, Equatable {
-    let image: String?
-    let name: String?
-    let actualPrice: Float?
-    let regularPrice: Float?
-    let installmentsPrice: Float?
-    let installmentsQuantity: Int?
+    var image: String?
+    var name: String?
+    var actualPrice: Double?
+    var regularPrice: Double?
+    var installmentsPrice: Double?
+    var installmentsQuantity: Int?
 }
 
 struct CartProductVariantModel: Hashable, Equatable {
-    let sku: String?
-    let name: String?
-    let avaliable: Bool?
-    let quantity: Int?
-    let product: CartProductModel?
+    var sku: String?
+    var name: String?
+    var quantity: Int?
+    var product: CartProductModel?
 }
 
 struct CartModel: Hashable, Equatable {
-    let productVariant: CartProductVariantModel?
+    var productVariant: CartProductVariantModel?
 }

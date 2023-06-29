@@ -5,4 +5,5 @@
 //  Created by Andre Luis Campopiano on 29/06/23.
 //
 
+import CoreSwift
 import Foundation

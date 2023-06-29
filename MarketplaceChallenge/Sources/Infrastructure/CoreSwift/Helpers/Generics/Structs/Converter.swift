@@ -10,6 +10,7 @@ import Foundation
 protocol Converter {
     associatedtype Input
     associatedtype Output
+    
     func convert(_ input: Input) -> Output?
 }
 

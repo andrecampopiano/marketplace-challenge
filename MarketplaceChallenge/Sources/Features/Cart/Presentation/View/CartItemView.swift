@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CartItemViewDelegate: AnyObject {
+    func clickRemoveItem(item: UITableViewCell)
+}
+
 final class CartItemView: UITableViewCell {
     
     // MARK: - Constants
@@ -16,6 +20,9 @@ final class CartItemView: UITableViewCell {
     }
     
     // MARK: - Properties
+    
+    private weak var delegate: CartItemViewDelegate?
+    private var viewModel: CartItemViewModelProtocol?
     
     private lazy var containerView: UIView = {
         let view = UIView()
@@ -30,6 +37,7 @@ final class CartItemView: UITableViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "image_example")
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -66,6 +74,12 @@ final class CartItemView: UITableViewCell {
         return button
     }()
     
+    private lazy var sizeView: SizeComponentView = {
+        let view = SizeComponentView()
+        view.sizeItem = .spacing(.big)
+        return view
+    }()
+    
     // MARK: - Instantiate
     
     static func instantiate() -> CartItemView {
@@ -75,7 +89,9 @@ final class CartItemView: UITableViewCell {
     
     // MARK: - Public Methods
     
-    func setup() {
+    func setup(viewModel: CartItemViewModelProtocol?, delegate: CartItemViewDelegate?) {
+        self.viewModel = viewModel
+        self.delegate = delegate
         setupDataSource()
         setupLayout()
     }
@@ -86,7 +102,32 @@ final class CartItemView: UITableViewCell {
         bindElements()
     }
     
-    private func bindElements() { }
+    private func bindElements() {
+        viewModel?.imageUrl.bind { [weak self] image in
+            guard let self = self else { return }
+            self.mainImageView.downloaded(from: image ?? String())
+        }
+        
+        viewModel?.title.bind { [weak self] title in
+            guard let self = self else { return }
+            self.titleLabel.text = title
+        }
+        
+        viewModel?.amount.bind { [weak self] amount in
+            guard let self = self else { return }
+            self.amountLabel.text = amount
+        }
+        
+        viewModel?.price.bind { [weak self] price in
+            guard let self = self else { return }
+            self.itemPriceLabel.text = price
+        }
+        
+        viewModel?.size.bind { [weak self] size in
+            guard let self = self else { return }
+            self.sizeView.setup(viewModel: SizeComponentViewModel(model: [SizeComponentModel(size: size)]))
+        }
+    }
     
     private func setupLayout() {
         selectionStyle = .none
@@ -97,6 +138,7 @@ final class CartItemView: UITableViewCell {
         setupTitleLabelLayout()
         setupAmountLabelLayout()
         setupItemPriceLabelLayout()
+        setupSizeViewLayout()
         setupTrashButtonLayout()
     }
     
@@ -120,8 +162,7 @@ final class CartItemView: UITableViewCell {
                              paddingBottom: .spacing(.zero))
         mainImageView.anchor(left: containerView.safeLeftAnchor,
                              paddingLeft: .spacing(.small))
-        mainImageView.anchor(width: .size(.xLarge),
-                             height: 100)
+        mainImageView.anchor(width: 100, height: 100 * 1.26)
     }
     
     private func setupTitleLabelLayout() {
@@ -129,9 +170,7 @@ final class CartItemView: UITableViewCell {
         titleLabel.anchor(top: containerView.safeTopAnchor,
                           paddingTop: .spacing(.extraSmall))
         titleLabel.anchor(left: mainImageView.safeRightAnchor,
-                          right: containerView.safeRightAnchor,
-                          paddingLeft: .spacing(.small),
-                          paddingRight: .spacing(.small))
+                          paddingLeft: .spacing(.small))
     }
     
     private func setupAmountLabelLayout() {
@@ -154,15 +193,25 @@ final class CartItemView: UITableViewCell {
     
     private func setupTrashButtonLayout() {
         containerView.addSubview(trashButton)
-        trashButton.anchor(width: .size(.big), height: .size(.big))
-        trashButton.anchor(right: containerView.safeRightAnchor,
-                           paddingRight: .spacing(.extraSmall))
+        trashButton.anchor(width: .size(.small), height: .size(.small))
+        trashButton.anchor(left: titleLabel.safeRightAnchor,
+                           right: containerView.safeRightAnchor,
+                           paddingLeft: .spacing(.small),
+                           paddingRight: .spacing(.small))
         trashButton.anchor(top: containerView.safeTopAnchor,
                            paddingTop: .spacing(.extraSmall))
     }
     
+    private func setupSizeViewLayout() {
+        containerView.addSubview(sizeView)
+        sizeView.anchor(bottom: itemPriceLabel.safeTopAnchor,
+                        paddingBottom: .size(.nano))
+        sizeView.anchor(right: amountLabel.safeRightAnchor)
+        sizeView.anchor(width: .spacing(.big), height: .spacing(.big))
+    }
+    
     @objc
     private func clickRemoveItem() {
-        print("clickRemoveItem")
+        delegate?.clickRemoveItem(item: self)
     }
 }

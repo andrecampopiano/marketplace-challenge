@@ -14,6 +14,7 @@ class HomeController: UIViewController {
     
     private enum Constants {
         static let navigationTitle: String = LocalizableBundle.homeControllerNavigationTitle.localize
+        static let cartButtonIconName: String = "icon_cart"
     }
     
     // MARK: - Properties
@@ -77,7 +78,7 @@ class HomeController: UIViewController {
     }
     
     private func setupCartButtonLayout() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_cart"),
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: Constants.cartButtonIconName),
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(cartButtonTapped))

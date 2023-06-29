@@ -57,6 +57,5 @@ enum FactoryCartModels {
                                 regularPrice: regularPrice,
                                 installmentsPrice: installmentsPrice,
                                 installmentsQuantity: installmentsQuantity)
-        
     }
 }

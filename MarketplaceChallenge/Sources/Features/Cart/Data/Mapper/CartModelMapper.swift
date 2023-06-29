@@ -21,7 +21,6 @@ enum CartModelMapper {
         let product = self.map(product: localModel?.product)
         return CartProductVariantModel(sku: localModel?.sku,
                                        name: localModel?.name,
-                                       avaliable: localModel?.avaliable,
                                        quantity: localModel?.quantity,
                                        product: product)
     }
