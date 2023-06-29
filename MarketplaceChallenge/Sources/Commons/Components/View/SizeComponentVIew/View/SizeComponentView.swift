@@ -11,6 +11,7 @@ import UIKit
 final class SizeComponentView: UIView {
     
     // MARK: - Properties
+    var sizeItem: CGFloat = .size(.large)
     
     private var viewModel: SizeComponentViewModelProtocol?
     
@@ -54,7 +55,17 @@ final class SizeComponentView: UIView {
         setupCollectionViewLayout()
     }
     
-    private func bindElements() { }
+    private func bindElements() {
+        viewModel?.model.bind { [weak self] _ in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+                self.collectionView.selectItem(at: IndexPath(row: .zero, section: .zero),
+                                               animated: false,
+                                               scrollPosition: .top)
+            }
+        }
+    }
     
     private func setupCollectionViewLayout() {
         addSubview(collectionView)
@@ -64,12 +75,12 @@ final class SizeComponentView: UIView {
 
 extension SizeComponentView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.model?.count ?? .zero
+        return viewModel?.model.value?.count ?? .zero
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(SizeComponentItemView.self, for: indexPath)
-        let itemModel = viewModel?.model?[indexPath.row]
+        let itemModel = viewModel?.model.value?[indexPath.row]
         cell.setup(title: itemModel?.size)
         return cell
     }
@@ -83,7 +94,7 @@ extension SizeComponentView: UICollectionViewDelegate {
 
 extension SizeComponentView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return  CGSize(width: .size(.large), height: collectionView.frame.height)
+        return  CGSize(width: sizeItem, height: collectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

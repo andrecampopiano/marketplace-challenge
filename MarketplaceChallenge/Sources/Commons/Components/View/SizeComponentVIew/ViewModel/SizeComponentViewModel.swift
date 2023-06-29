@@ -5,26 +5,31 @@
 //  Created by Andre Luis Campopiano on 20/06/23.
 //
 
+import CoreSwift
 import Foundation
 
+struct SizeComponentModel {
+    var size: String?
+}
+
 protocol SizeComponentViewModelProtocol {
-    var model: [ProductSizeModel]? { get }
+    var model: Dynamic<[SizeComponentModel]?> { get }
     
     func updateSelectedItem(position: Int)
 }
 
 final class SizeComponentViewModel: SizeComponentViewModelProtocol {
     
-    var model: [ProductSizeModel]?
-    var itemSelected: ProductSizeModel?
+    var model = Dynamic<[SizeComponentModel]?>(nil)
+    var itemSelected: SizeComponentModel?
     
-    init(model: [ProductSizeModel]?) {
-        self.model = model
+    init(model: [SizeComponentModel]?) {
+        self.model.value = model
     }
     
     // MARK: - Public Methods
     
     func updateSelectedItem(position: Int) {
-        itemSelected = model?[position]
+        itemSelected = model.value?[position]
     }
 }
